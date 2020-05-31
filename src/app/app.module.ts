@@ -9,6 +9,8 @@ import { AccueilEnseignementComponent } from './pages/accueil-enseignement/accue
 import { LoginComponent } from './pages/login/login.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { AccueilVoisinageComponent } from './pages/accueil-voisinage/accueil-voisinage.component';
+import { HeaderComponent } from './pages/header/header.component';
+import { FooterComponent } from './pages/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AccueilVoisinageComponent } from './pages/accueil-voisinage/accueil-voi
     AccueilEnseignementComponent,
     LoginComponent,
     InscriptionComponent,
-    AccueilVoisinageComponent
+    AccueilVoisinageComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule
