@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "solidariteCovid19FrontEnd"
+    }
+  },
+  "defaultProject": "solidariteCovid19FrontEnd",
+  "cli": {
+    "analytics": "c3a7cc64-d393-4a09-ab4e-375a0627a021"
+  }
 }

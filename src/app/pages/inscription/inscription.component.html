@@ -1,1 +1,128 @@
-<p>inscription works!</p>
+<app-header></app-header>
+<div class="parent ">
+<div class=" container-fluid">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5 aside justify-content-center">
+      <h3 class="row mx-auto justify-content-center titre my-2" style="color: white">
+        Solidarite Covide-19
+      </h3>
+      <div class="row aside-image mx-auto justify-content-center ">
+        <div>
+        <p class="row mx-auto justify-content-center" style="color: white">
+          L'appartenance à la famille humaine confère à toute personne une sorte de citoyenneté mondiale,
+          lui donnant des droits et des devoirs, les hommes étant unis par une communauté d'origine et de destinée suprême.
+          La condamnation du racisme, la protection des minorités, l'assistance aux réfugiés,
+          la mobilisation de la solidarité internationale envers les plus nécessiteux,
+          ne sont que des applications cohérentes du principe de la citoyenneté mondiale.
+        </p>
+          <p class="row mx-auto justify-content-end " style="color: white">
+            "Jean-Paul"
+          </p>
+        </div>
+      </div>
+      <p class="row mx-auto justify-content-center" style="color: white">
+      Souvent la peur de l'engagement nous coûte cher et nous laisse errer libre certes, mais vide.
+      Entre cette liberté si désirable et la relation vivante que notre nature appelle ardemment, le déchirement semble fatal.
+      Je ne l'ai pas. Pourquoi notre rêve d'autonomie ne respirerait-il pas au coeur même de nos plus profonds engagements ?
+      Pourquoi dans un respect mutuel de nos rythmes et de nos lentes métamorphoses, ne tenterions-nous pas une loyauté nouvelle ?
+      Le mariage - et les alliances vieilles comme le monde - familles et communauté - qui volent en éclats aujourd'hui attendent
+      d'être réinventées, modulées de neuf.
+      Car en-deçà du bruit et de la fureur, l'histoire de notre humanité n'est qu'un lumineux tissu de solidarités secrètes.
+      </p>
+      <div class="row aside-image2 mx-auto justify-content-center ">
+        <div>
+          <p class="row mx-auto justify-content-center" style="color: white">
+            Le côté positif de l'individualisme moderne est de
+            donner à chacun plus de responsabilité et
+            d'autonomie son côté négatif est de dégrader les solidarités et
+            d'accroître les solitudes.
+          </p>
+          <p class="row mx-auto justify-content-end citation" style="color: white">
+            "Edgar Morin"
+          </p>
+          <p class="row mx-auto justify-content-center" style="color: white">
+          S'il y a une morale, ici, ce n'est pas celle de la pitié, de la compassion, moins que jamais une morale individuelle.
+          C'est celle de la solidarité. Une solidarité de la résistance, bien sûr : une morale de résistance collective.
+          </p>
+          <p class="row mx-auto justify-content-end citation" style="color: white">
+            "Jorge Semprun"
+          </p>
+        </div>
+      </div>
+      <div class="row mx-auto my-3 justify-content-center">
+        <a href=""><i class="fa fa-facebook mx-3 fa-2x icon face"></i></a>
+        <a href=""><i class="fa fa-instagram mx-3 fa-2x icon"></i></a>
+        <a href=""><i class="fa fa-twitter mx-3 fa-2x icon"></i></a>
+      </div>
+    </div>
+    <form class="col-md-5 back-inscription ">
+      <div class="row">
+        <i class="fa fa-user-plus fa-3x mx-auto my-3"></i>
+      </div>
+      <div class="row">
+        <h5 class="mx-auto mb-2 inscription-text">INSCRIPTION</h5>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nom">Nom</label>
+          <input type="text" class="form-control input1" id="nom" name="nom" placeholder="Entrer votre nom">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="prenom">prenom</label>
+          <input type="text" class="form-control input1" id="prenom" name="prenom" placeholder="Entrer votre prenom">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control input1 " id="email" placeholder="exemple@gmail.com">
+      </div>
+      <div class="form-group">
+        <label for="inputlogin">Login</label>
+        <input type="text" class="form-control input1" id="inputlogin" placeholder="Entrer votre login">
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de pass</label>
+        <input type="password" class="form-control input1" id="password" placeholder="Entrer votre mot de passe">
+      </div>
+      <div class="form-group">
+        <label for="confirme-password"> confirmation du mot de pass</label>
+        <input type="password" class="form-control input1" id="confirme-password" placeholder=" confirmation du mot de passe">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputville">Ville</label>
+          <select id="inputville" class="form-control input1">
+            <option selected>Choose...</option>
+            <option>Marrakech</option>
+            <option>casablanca</option>
+            <option>safi</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputquartier">Quartier</label>
+          <select id="inputquartier" class="form-control input1">
+            <option selected>Choose...</option>
+            <option>Marrakech</option>
+            <option>casablanca</option>
+            <option>safi</option>
+            <option>Autre</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group ">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            garder ma session
+          </label>
+        </div>
+      </div>
+      <button class="btn  btn-block send my-1" type="submit" >S'INSCRIRE</button>
+      <button class="btn  btn-block send my-3" (click)="vers_connextion()">SE CONNECTER</button>
+    </form>
+  </div>
+</div>
+</div>
+<app-footer></app-footer>

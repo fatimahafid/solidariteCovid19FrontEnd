@@ -1,0 +1,65 @@
+@media screen and (max-width: 1100px) {
+  .icon {
+
+  }
+}
+.back-inscription{
+  background:linear-gradient(#5f4dee,#400799);
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.send{
+  background:white;
+  border-radius: 40px;
+
+}
+label{
+  color:white
+}
+.send:hover{
+  background-color:#5f4dee;
+}
+.input1{
+  border-radius: 40px;
+}
+.parent{
+  margin-right: 20%;
+  margin-left:20% ;
+  border-radius:0px;
+}
+.inscription-text{
+  color:white;
+}
+.fa-user-circle{
+  color: white;
+}
+.aside{
+  background-color: black;
+  text-align: center;
+  color:white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  justify-items: center;
+  font-family: Algerian;
+}
+.icon{
+  color:white;
+  padding:10px;
+  border-color: white;
+  border-width:1px;
+  border-style: solid;
+  border-radius: 30px;
+}
+.face{
+  color:white;
+  padding:10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-color: white;
+  border-width:1px;
+  border-style: solid;
+  border-radius: 30px;
+}
+.icon:hover{
+  text-shadow: 2px 2px red;
+}

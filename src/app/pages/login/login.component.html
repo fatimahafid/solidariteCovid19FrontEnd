@@ -1,1 +1,41 @@
-<p>login works!</p>
+<app-header></app-header>
+<div class="parent my-5 align-content-end">
+  <div class="container-fluid">
+    <div class="row mt-5">
+      <div class="col-md-1"></div>
+      <div class="col-md-5 aside " >
+        <h4 class=" mt-5" style="color: white">Solidarite Covide-19</h4>
+        <p class=" my-1" style="color: white">tous nous avons besoin du soutien,
+          si c'est pas aujourd'hui peut etre un  autre jour
+        </p>
+        <p style="color: white">Éduquons-nous à la tolérance, à la solidarité.</p>
+        <div class="row mx-auto my-3 justify-content-center ">
+          <a href=""><i class="fa fa-facebook mx-3 my-2 fa-2x icon face"></i></a>
+          <a href=""><i class="fa fa-instagram mx-3 my-2 fa-2x icon"></i></a>
+          <a href=""><i class="fa fa-twitter mx-3 my-2 fa-2x icon"></i></a>
+        </div>
+      </div>
+      <form class="col-md-5 back-inscription">
+        <div class="row">
+          <i class="fa fa-user-circle fa-3x mx-auto my-3"></i>
+        </div>
+        <div class="row">
+            <h5 class="mx-auto mb-2 inscription-text">CONNEXION</h5>
+        </div>
+        <div class="form-row mx-auto">
+          <label for="inputlogin">Login</label>
+          <input type="text" class="form-control input1" id="inputlogin" placeholder="Entrer votre login">
+        </div>
+        <div class="form-row mx-auto position-relative">
+          <label for="password">Mot de pass</label>
+           <input type="password" class="form-control input1" id="password" placeholder="Entrer votre mot de passe">
+        </div>
+        <button class="btn  btn-block send my-3"  type="submit" >SE CONNECTER</button>
+        <button class="btn  btn-block send my-1"  (click)="vers_inscription()">S'INSCRIRE</button>
+      </form>
+      <div class="col-md-"></div>
+    </div>
+
+  </div>
+</div>
+<app-footer></app-footer>
