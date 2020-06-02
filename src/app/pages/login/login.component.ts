@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +14,6 @@ export class LoginComponent implements OnInit {
   }
 
   vers_inscription() {
-    this.router.navigate(["inscription"])
+    this.router.navigate(['inscription']);
   }
 }

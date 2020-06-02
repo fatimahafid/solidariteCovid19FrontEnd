@@ -1,1 +1,75 @@
-<p>accueil-voisinage works!</p>
+<app-header></app-header>
+<div class="container" id="carouselcontainer">
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[0]" alt="Random first slide" >
+      </div>
+      <div class="carousel-caption">
+        <p>Répondre aux appels d'aide</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="filter" [src]="images[1]"  alt="Random second slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Restant solidaires </h3>
+        <p>Dans les moments difficiles c'est la solidarité qui crée de la force</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="filter" [src]="images[2]" alt="Random third slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>N'oubliant pas les personnes agées</h3>
+        <p>Vous pouvez les aider et vous pouvez aussi etre aidé</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+<div class="container" id="cardcontainer">
+<div class="row">
+<div class="col-md-6">
+  <div class="card" >
+<div class="insidecard">
+
+  <h2>Espace Volontaire</h2>
+ <div class="row">
+
+   <div class="col-md-4 smallcol" >
+   <div id="icone1">
+
+   </div>
+   </div>
+   <div class="col-md-8 bigcall">
+Dans cet espace vous pouvez aidé les gens en répondant à leurs demandes d'aide à leur place à travers plusieurs actions possibles,et vous pouvez également publier des offres d'aide concernat les memes actions.</div>
+
+ </div>
+  <a href="#" class="myButton">Commencer</a></div>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="card" >
+    <div class="insidecard">
+
+      <h2>Espace Demandeur d'aide</h2>
+      <div class="row">
+
+        <div class="col-md-4 smallcol" >
+          <div id="icone2">
+
+          </div>
+        </div>
+        <div class="col-md-8 bigcall">
+Dans cet espace vous pourrez publier des demandes d'aide concernant les différents services offerts dans la plateforme ,vous pouvez également s'inscrir aux offres d'aide publiées par les autres volentaires          </div>
+
+      </div>
+      <a href="#" class="myButton">Commencer</a></div>
+  </div>
+</div>
+</div>
+</div>
+<app-footer></app-footer>

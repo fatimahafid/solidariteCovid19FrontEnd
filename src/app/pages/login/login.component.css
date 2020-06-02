@@ -4,20 +4,19 @@
   }
 }
 .back-inscription{
-  background:linear-gradient(#5f4dee,#400799);
+  background-color:#f3f7fd;
   margin-bottom: 20px;
   margin-top: 20px;
+  padding: 20px;
 }
 .send{
-  background:white;
+  background:linear-gradient(#5f4dee,#400799);
   border-radius: 40px;
 
 }
-label{
-  color:white
-}
 .send:hover{
-  background-color:#5f4dee;
+  background:white;
+  color:#5f4dee;
 }
 .input1{
   border-radius: 40px;
@@ -28,38 +27,38 @@ label{
   border-radius:0px;
 }
 .inscription-text{
-  color:white;
+  color:#5f4dee;
 }
 .fa-user-circle{
-  color: white;
+  color: #5f4dee;
 }
 .aside{
-  background-color: black;
+  background-color: #f3f7fd;
   text-align: center;
-  color:white;
+  color:black;
   margin-bottom: 20px;
   margin-top: 20px;
   justify-items: center;
   font-family: Algerian;
 }
 .icon{
-  color:white;
+  color:#5f4dee;
   padding:10px;
-  border-color: white;
+  border-color: #5f4dee;
   border-width:1px;
   border-style: solid;
   border-radius: 30px;
 }
 .face{
-  color:white;
+
   padding:10px;
   padding-left: 15px;
   padding-right: 15px;
-  border-color: white;
+  border-color:#5f4dee;
   border-width:1px;
   border-style: solid;
   border-radius: 30px;
 }
 .icon:hover{
-  text-shadow: 2px 2px red;
+  color:white;
 }

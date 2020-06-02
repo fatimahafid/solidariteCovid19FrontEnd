@@ -1,1 +1,77 @@
-<p>accueil-enseignement works!</p>
+<app-header></app-header>
+<div class="container" id="carouselcontainer">
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[0]" alt="Random first slide" >
+      </div>
+      <div class="carousel-caption">
+        <h3>Espace Enseignement</h3>
+        <p>n'arretez pas votre expérience d'apprentissage </p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="filter" [src]="images[1]"  alt="Random second slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Partagez </h3>
+        <p>Partagez  votre  savoir pour aider</p>
+
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="filter" [src]="images[2]" alt="Random third slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Apprendre facilement </h3>
+        <p>Période difficile ...et alors?! </p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+<div class="container" id="cardcontainer">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card" >
+        <div class="insidecard">
+
+          <h2>Espace Créateur <br> de contenu</h2>
+          <div class="row">
+
+            <div class="col-md-4 smallcol" >
+              <div id="icone1">
+
+              </div>
+            </div>
+            <div class="col-md-8 bigcall">
+              En tant que créateur de contenu vous aurez le prévilège de  partager avec les utilisateurs des cours ou des tutoriels concernat plusieurs domaines,vous pouvez ainsi aider les autres en répondant à leurs questions qui concernent votre contenu ou qui sont reliées à d'autres forums  .</div>
+
+          </div>
+          <a href="#" class="myButton">Commencer</a></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card" >
+        <div class="insidecard">
+
+          <h2>Espace Apprenant  </h2>
+          <div class="row">
+
+            <div class="col-md-4 smallcol" >
+              <div id="icone2">
+
+              </div>
+            </div>
+            <div class="col-md-8 bigcall">
+              Pour vous accompagner dans votre expéience d'apprentissage durant les périodes difficiles nla plateforme Solidarité covid-19 vous offre le prévilège de consulter les différents cours de différents domaines ,vous pouvez également poser vos questions concernant un ou plusieurs contenus. Vous pouvez ainsi participer dans les forums de discussion de la plalteforme
+            </div>
+          <a href="#" class="myButton">Commencer</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<app-footer></app-footer>

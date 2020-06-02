@@ -1,0 +1,54 @@
+blockquote{
+  border-left:none
+}
+
+.quote-badge{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.quote-box{
+
+  overflow: hidden;
+  margin-top: -50px;
+  padding-top: -100px;
+  border-radius: 17px;
+  background-color: #5f4dee;
+  margin-top: 25px;
+  color:white;
+  width: 400px;
+  box-shadow: 2px 2px 2px 2px #E0E0E0;
+
+}
+
+.quotation-mark{
+
+  margin-top: -10px;
+  font-weight: bold;
+  font-size:100px;
+  color:white;
+  font-family: "Roboto", sans-serif;
+
+}
+
+.quote-text{
+
+  font-size: 24px;
+  margin-top: -65px;
+  margin-left: 10px;
+}
+.blog-post-bottom{
+  margin-left: 10px;
+  font-family: "Britannic Bold";
+}
+.m{
+  margin-left: 10px;
+}
+
+#tjr{
+  margin-top: 130px;
+  font-family: "Rage Italic";
+  font-size: 50px;
+  color: #5f4dee;
+}
+
+

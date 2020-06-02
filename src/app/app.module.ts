@@ -8,39 +8,17 @@ import { AccueilEnseignementComponent } from './pages/accueil-enseignement/accue
 import { LoginComponent } from './pages/login/login.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { AccueilVoisinageComponent } from './pages/accueil-voisinage/accueil-voisinage.component';
-import {RouterModule, Routes} from '@angular/router';
-import {HeaderComponent} from "./pages/header/header.component";
-import {FooterComponent} from "./pages/footer/footer.component";
-const routes: Routes = [
-  {
-    path: 'inscription',
-    component: InscriptionComponent
-  },
-  {
-    path: 'voisinage',
-    component: AccueilVoisinageComponent
-  },
-  {
-    path: 'isoloment',
-    component: AccueilIsolementComponent
-  },
-  {
-    path: 'enseignement',
-    component: AccueilEnseignementComponent
-  },
-  {
-    path: 'home',
-    component: HomePageComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: '',
-    component: HomePageComponent
-  },
-];
+import { HeaderComponent } from './pages/header/header.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import {IsolementBodyComponent} from './pages/accueil-isolement/isolement-body/isolement-body.component';
+import {IsolementHeadComponent} from './pages/accueil-isolement/isolement-head/isolement-head.component';
+import {IsolementCarouselComponent} from './pages/accueil-isolement/isolement-carousel/isolement-carousel.component';
+import {IsolementCommancerComponent} from './pages/accueil-isolement/isolement-commancer/isolement-commancer.component';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from '@angular/router';
+import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,13 +30,19 @@ const routes: Routes = [
     InscriptionComponent,
     AccueilVoisinageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    IsolementBodyComponent,
+    IsolementHeadComponent,
+    IsolementCarouselComponent,
+    IsolementCommancerComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
-
+    AppRoutingModule,
+    RouterModule,
+    NgbCarouselModule,
   ],
+
   providers: [],
   bootstrap: [PagesComponent]
 })
