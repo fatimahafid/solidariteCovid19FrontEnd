@@ -1,5 +1,5 @@
 <body data-spy="scroll" data-target=".fixed-top">
-<app-header></app-header>
+
 <!-- Header -->
 <header id="header" class="header" >
 
@@ -8,7 +8,7 @@
 
     <div class="navbar-custom" style="position:absolute;top:360px; width:600px; height:400px; z-index:2;font-size:200%">
       <span class="nav-item">
-      <a class=" btn-outline-sm" href="../login/login.component.html" style="margin-left: 760px;margin-top: 130px;width: 300px;height: 70px;font:  700 0.875rem/0  sans-serif;font-size: 24px;text-align: center;">INSCRIVEZ VOUS!<br><br> <br><br><h5 style="font:  700 0.875rem/0  sans-serif;text-align: center;margin-top: 30px">GRATUITEMENT</h5>
+      <a class=" btn-outline-sm" routerLink="inscription" style="margin-left: 760px;margin-top: 130px;width: 300px;height: 70px;font:  700 0.875rem/0  sans-serif;font-size: 24px;text-align: center;">INSCRIVEZ VOUS!<br><br> <br><br><h5 style="font:  700 0.875rem/0  sans-serif;text-align: center;margin-top: 30px">GRATUITEMENT</h5>
       </a>
       </span>
     </div>
@@ -127,7 +127,7 @@
                   <h3>A PROPOS DE NOUS</h3>
                   <p>Notre but est d'apporter des solutions innovantes aux défis engendrés par l’épidémie du Coronavirus, on vise ainsi à inciter et aider les internautes à montrer le sens de solidarité durant les périodes difficiles, et à partager leur savoir faire et leurs connaissances avec les gens qui en ont besoin.</p>
 
-                  <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-1">INSCRIVEZ VOUS !</a>
+                  <a class="btn-solid-reg popup-with-move-anim" routerLink="/inscription">INSCRIVEZ VOUS !</a>
                 </div> <!-- end of text-container -->
               </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -323,6 +323,5 @@
 
 
 <app-footer></app-footer>
-
 
 </body>

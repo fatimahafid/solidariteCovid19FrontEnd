@@ -8,6 +8,8 @@
   border-radius: 60px 0px 60px 0px;
   margin: 50px;
   margin-left: 100px;
+  height: 300px;
+
 }
 
 #borderDemo2 {
@@ -15,12 +17,17 @@
   border-radius: 0px 60px 0px 60px;
   margin: 50px;
   margin-right: 100px;
+  height: 300px;
+
+}
+
+.borderDemo{
+  position: relative;
 }
 
 .cont {
   width: 400px;
   height: 70px;
-  position: relative;
   display: flex;
 
 }
@@ -65,7 +72,6 @@ svg {
 .btn span {
   color: rgba(28,110,164,0.5);
   font-size: 18px;
-  font-weight: 200;
   font-family: Roboto;
 }
 
@@ -83,16 +89,16 @@ svg {
 
 #p1,#p2{
   margin: 10px;
-  font-size: 32px;
+  font-family: "Roboto Light";
+  font-size: 30px;
   text-align: left;
   color: #400799;
 }
 
 .img{
-  margin: 5px;
-  margin-top: 100px;
+  width: 60px;
   height: 100px;
-  width: fit-content;
+
 
 }
 

@@ -15,10 +15,44 @@ import {IsolementHeadComponent} from './pages/accueil-isolement/isolement-head/i
 import {IsolementCarouselComponent} from './pages/accueil-isolement/isolement-carousel/isolement-carousel.component';
 import {IsolementCommancerComponent} from './pages/accueil-isolement/isolement-commancer/isolement-commancer.component';
 import { AppRoutingModule } from './app-routing.module';
-import {RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
+import { AccueilStatisticsComponent } from './pages/accueil-statistics/accueil-statistics.component';
 
-
+const routes: Routes = [
+  {
+    path: 'inscription',
+    component: InscriptionComponent
+  },
+  {
+    path: 'voisinage',
+    component: AccueilVoisinageComponent
+  },
+  {
+    path: 'isoloment',
+    component: AccueilIsolementComponent
+  },
+  {
+    path: 'enseignement',
+    component: AccueilEnseignementComponent
+  },
+  {
+    path: 'home',
+    component: HomePageComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'statistics',
+    component: AccueilStatisticsComponent
+  },
+  {
+    path: '',
+    component: HomePageComponent
+  },
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,12 +68,13 @@ import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
     IsolementBodyComponent,
     IsolementHeadComponent,
     IsolementCarouselComponent,
-    IsolementCommancerComponent
+    IsolementCommancerComponent,
+    AccueilStatisticsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule,
+    RouterModule.forRoot(routes),
     NgbCarouselModule,
   ],
 
