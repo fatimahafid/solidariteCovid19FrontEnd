@@ -29,7 +29,7 @@ const routes: Routes = [
     component: AccueilVoisinageComponent
   },
   {
-    path: 'isoloment',
+    path: 'isolement',
     component: AccueilIsolementComponent
   },
   {
