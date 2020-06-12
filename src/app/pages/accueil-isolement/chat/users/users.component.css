@@ -1,0 +1,30 @@
+.authentifier{
+  width: 15px;
+  height: 15px;
+  background-color: green;
+  border: 2px solid green;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0px;
+  right:0px;
+}
+.container{
+
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+.image{
+  width: 50px;
+  height:50px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+}
+.btn-recherche{
+  background-color:white;
+  color:#400799;
+}
+.btn-recherche:hover{
+  background-color: #400799;
+  color:white;
+}

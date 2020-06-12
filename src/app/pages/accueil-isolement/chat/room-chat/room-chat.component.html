@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+    <div class="card shadow" style="border:1px solid transparent;border-radius: 5px;background-color: whitesmoke">
+      <div class="card-header" style="position: relative">
+        <img [src]="image[0]" style="width: 50px;height: 50px;border:1px solid transparent;border-radius:30px">
+        <p style="position: absolute;bottom:5px;left: 10%;color:#400799;font-size: 20px;font-weight: bold">exemple exemple</p>
+      </div>
+      <div class="card-body " style="height: 590px;overflow-y:scroll;">
+        <app-message [message]="'bonjour'" [owner]="true"></app-message>
+        <app-message [message]="'bonjour cv ?'" [owner]="false"></app-message>
+        <app-message [message]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi, \n'+
+'          consectetur culpa eius error expedita'" [owner]="false">
+        </app-message>
+        <app-message [message]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi, \n'+
+'          consectetur culpa eius error expedita '" [owner]="true">
+        </app-message>
+        <app-message [message]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi, \n'+
+'          consectetur culpa eius error expedita '" [owner]="false">
+        </app-message>
+        <app-message [message]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi, \n'+
+'          consectetur culpa eius error expedita '" [owner]="true">
+        </app-message>
+      </div>
+      <div class="card-footer">
+        <div class="form-inline">
+          <label class="btn btn-default btn-sm  btn-file">
+            <i class="fa fa-file fa-2x mx-auto" aria-hidden="true" style="color: #400799;"></i>
+            <input type="file" style="display: none;">
+          </label>
+          <i class="" type=""  ></i>
+          <textarea rows="2" style="width: 90%;border: 2px solid #400799;border-radius: 5px"></textarea>
+          <i class="fa fa-send fa-2x mx-auto" style="color: #400799;font-size: 30px"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

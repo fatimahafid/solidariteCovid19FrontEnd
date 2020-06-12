@@ -1,0 +1,67 @@
+<mat-horizontal-stepper labelPosition="bottom" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel></ng-template>
+      <mat-form-field class="mx-2">
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Nom" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <mat-form-field class="mx-2">
+        <mat-label>Prenom</mat-label>
+        <input matInput placeholder="Prenom" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <mat-form-field class="mx-2">
+        <mat-label>Age</mat-label>
+        <input matInput placeholder="Age" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext class="btn" >Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" optional>
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel></ng-template>
+      <mat-form-field class="mx-2">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="exemple@gmail.com" required>
+      </mat-form-field>
+      <mat-form-field class="mx-2">
+        <mat-label>Ville</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Marrakech" required>
+      </mat-form-field>
+      <mat-form-field class="mx-2">
+        <mat-label>Telephone</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="0652525252" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious class="btn mx-1" >Back</button>
+        <button mat-button matStepperNext class="btn mx-1" >Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel ></ng-template>
+    <mat-form-field class="mx-2">
+      <mat-label>Login</mat-label>
+      <input matInput formControlName="secondCtrl" placeholder="login" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>password</mat-label>
+      <input matInput formControlName="secondCtrl" placeholder="*********" required>
+    </mat-form-field>
+    <div>
+      <button mat-button matStepperPrevious class="btn mx-1" >Back</button>
+      <button mat-button (click)="stepper.reset()" class="btn mx-1">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+<div class="row justify-content-end">
+  <label class="btn btn-default btn-sm  btn-file"> Image
+    <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
+    <input type="file" style="display: none;">
+  </label>
+  <i mat-dialog-close="true" class="fa fa-check fa-3x mx-2 icon-bottom " ></i>
+  <i mat-dialog-close="false" class="fa fa-times fa-3x mx-2 icon-bottom " ></i>
+
+</div>

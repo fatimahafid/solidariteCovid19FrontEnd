@@ -1,0 +1,21 @@
+<div class="container ">
+  <div class="row mb-2 shadow">
+    <input class="form-control" type="search" placeholder="Recherche"
+           aria-label="Search" style="width:80%">
+    <button class="btn mx-auto btn-recherche"  >Search</button>
+  </div>
+  <div class="row ">
+    <div class="col-md-12">
+      <div class="card my-1 row shadow" style="position: relative;background-color: whitesmoke" *ngFor="let image of images">
+        <div class="group" style="position: relative; width: 50px;height:50px;">
+           <img [src]="image" class="image" style=""/>
+           <div *ngIf="online" class="authentifier"></div>
+        </div>
+        <div class="justify-content-center">
+          <label style="color:#400799;" class="mx-3 my-3">mohamed amin</label>
+          <label *ngIf="online" style="position: absolute;right: 3px;top:3px; color:#400799;font-size: 17px ">online il y a : 1h</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

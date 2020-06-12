@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatSliderModule } from '@angular/material/slider';
 import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -18,7 +19,23 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule, Routes} from '@angular/router';
 import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
 import { AccueilStatisticsComponent } from './pages/accueil-statistics/accueil-statistics.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {_MatMenuDirectivesModule, MatMenuModule} from '@angular/material/menu';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { ChatComponent } from './pages/accueil-isolement/chat/chat.component';
+import { UsersComponent } from './pages/accueil-isolement/chat/users/users.component';
+import { RoomChatComponent } from './pages/accueil-isolement/chat/room-chat/room-chat.component';
+import {MatStepperModule} from "@angular/material/stepper";
+import {ReactiveFormsModule} from "@angular/forms";
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import {ProfileComponent} from "./pages/profile/profile.component";
+import {MessageComponent} from "./pages/accueil-isolement/chat/message/message.component";
 const routes: Routes = [
   {
     path: 'inscription',
@@ -48,6 +65,24 @@ const routes: Routes = [
     path: 'statistics',
     component: AccueilStatisticsComponent
   },
+
+  {
+    path: 'chat',
+    component: ChatComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'edit_profile',
+    component: EditProfileComponent
+  },
+  {
+    path: 'message',
+    component: MessageComponent
+  },
+
   {
     path: '',
     component: HomePageComponent
@@ -69,13 +104,32 @@ const routes: Routes = [
     IsolementHeadComponent,
     IsolementCarouselComponent,
     IsolementCommancerComponent,
-    AccueilStatisticsComponent
+    AccueilStatisticsComponent,
+    ChatComponent,
+    UsersComponent,
+    RoomChatComponent,
+    ProfileComponent,
+    EditProfileComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
     NgbCarouselModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatSidenavModule,
+    _MatMenuDirectivesModule,
+    MatMenuModule,
+    MatExpansionModule,
+    MatInputModule,
+    MatCardModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatAutocompleteModule,
+    MatStepperModule,
+    ReactiveFormsModule
   ],
 
   providers: [],

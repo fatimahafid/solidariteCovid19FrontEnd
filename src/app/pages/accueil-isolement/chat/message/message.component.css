@@ -1,0 +1,21 @@
+.message-sended{
+margin-left:50%;
+}
+.message-receved{
+margin-right:50%;
+}
+.message-text{
+  color: black;
+  font-family: Dialog;
+  font-size: 20px;
+}
+.description{
+  background-color: gray;
+  border:1px solid transparent;
+  border-radius: 15px 0px  0px 15px;
+}
+.message{
+  width: 50%;
+  border:1px solid transparent;
+  border-radius: 15px
+}
