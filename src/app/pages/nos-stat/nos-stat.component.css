@@ -1,0 +1,59 @@
+.insidecard{
+  background-color:white;
+  font-family: Roboto;
+  font-size: 30px;
+  opacity: 1;
+  border-radius: 10px 100px / 120px;
+  border: 5px dashed #400799;
+  padding:  10px;
+  color:#400799;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 20px;
+}
+
+.insidecard2{
+  background-color:white;
+  font-family: Roboto;
+  font-size: 30px;
+  opacity: 1;
+  border-radius: 10px 100px / 120px;
+  padding:  10px;
+  color:#400799;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 40px;
+  width: 300px;
+  border: 7px inset rgba(88,61,216,0.5);
+}
+
+.insidecard:hover {
+  border: 7px solid #400799;
+}
+
+.insidecard2:hover {
+  border: 7px solid #5F4DEE;
+  margin-top: 15px;
+}
+
+
+#chart1,#chart {
+  max-width: 650px;
+  margin: 30px auto;
+  border: 7px inset #400799;
+}
+h2{
+  font-size: 30px;
+  text-align: center;
+}
+
+.para{
+  color: #888888;
+  font-size: 35px;
+  margin-top: 150px ;
+  font-family: "Segoe UI Historic";
+
+
+}
+
+
+
+

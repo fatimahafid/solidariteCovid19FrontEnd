@@ -18,6 +18,20 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule, Routes} from '@angular/router';
 import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
 import { AccueilStatisticsComponent } from './pages/accueil-statistics/accueil-statistics.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {DatePipe} from "@angular/common";
+import {User} from "./controller/model/user.model";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatTableModule} from "@angular/material/table";
+import {MatInputModule} from "@angular/material/input";
+import { ChartModule } from '@syncfusion/ej2-angular-charts';
+import { CategoryService, LineSeriesService} from '@syncfusion/ej2-angular-charts';
+import { NosStatComponent } from './pages/nos-stat/nos-stat.component';
+import { NgApexchartsModule } from "ng-apexcharts";
+
 
 const routes: Routes = [
   {
@@ -52,6 +66,10 @@ const routes: Routes = [
     path: '',
     component: HomePageComponent
   },
+  {
+    path: 'nos_stat',
+    component: NosStatComponent
+  },
 ];
 @NgModule({
   declarations: [
@@ -69,16 +87,27 @@ const routes: Routes = [
     IsolementHeadComponent,
     IsolementCarouselComponent,
     IsolementCommancerComponent,
-    AccueilStatisticsComponent
+    AccueilStatisticsComponent,
+    NosStatComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
     NgbCarouselModule,
-  ],
+    FormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatInputModule,
+    ChartModule,
+    NgApexchartsModule,
+],
 
-  providers: [],
+  providers: [DatePipe,User,CategoryService, LineSeriesService],
   bootstrap: [PagesComponent]
 })
 export class AppModule { }

@@ -80,4 +80,8 @@
   color: black;
   font-family: Algerian;
  }
-
+.alert{
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: 5px;
+}
