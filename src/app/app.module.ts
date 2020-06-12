@@ -31,9 +31,33 @@ import { ChartModule } from '@syncfusion/ej2-angular-charts';
 import { CategoryService, LineSeriesService} from '@syncfusion/ej2-angular-charts';
 import { NosStatComponent } from './pages/nos-stat/nos-stat.component';
 import { NgApexchartsModule } from "ng-apexcharts";
+import { EnseignementEtudComponent } from './pages/enseignement-etud/enseignement-etud.component';
+import { EnseignementCreateurComponent } from './pages/enseignement-createur/enseignement-createur.component';
+import { EnseignementListMescoursComponent } from './pages/enseignement-list-mescours/enseignement-list-mescours.component';
+import { EnseignementForumComponent } from './pages/enseignement-forum/enseignement-forum.component';
 
 
 const routes: Routes = [
+  {
+    path: 'enseignement/createur/mescours',
+    component: EnseignementListMescoursComponent
+  },
+  {
+    path: 'enseignement/createur',
+    component: EnseignementCreateurComponent
+  },
+  {
+    path: 'enseignement/createur/mescours/createurs',
+    component: EnseignementCreateurComponent
+  },
+  {
+    path: 'enseignement/etudiant',
+    component: EnseignementEtudComponent
+  },
+  {
+    path: 'enseignement/etudiant/cours',
+    component: EnseignementEtudComponent
+  },
   {
     path: 'inscription',
     component: InscriptionComponent
@@ -88,7 +112,11 @@ const routes: Routes = [
     IsolementCarouselComponent,
     IsolementCommancerComponent,
     AccueilStatisticsComponent,
-    NosStatComponent
+    NosStatComponent,
+    EnseignementEtudComponent,
+    EnseignementCreateurComponent,
+    EnseignementListMescoursComponent,
+    EnseignementForumComponent,
   ],
   imports: [
     BrowserModule,
