@@ -23,14 +23,16 @@
             <h5 class="mx-auto mb-2 inscription-text">CONNEXION</h5>
         </div>
         <div class="form-row mx-auto">
-          <label for="inputlogin">Login</label>
-          <input type="text" class="form-control input1" id="inputlogin" placeholder="Entrer votre login">
+          <label for="loginname">Login</label>
+          <input type="text" class="form-control input1" id="loginname" placeholder="Entrer votre login" required [(ngModel)]="loginname"
+                 name="loginname"  required>
         </div>
         <div class="form-row mx-auto position-relative">
           <label for="password">Mot de pass</label>
-           <input type="password" class="form-control input1" id="password" placeholder="Entrer votre mot de passe">
+           <input type="password" class="form-control input1" id="password" placeholder="Entrer votre mot de passe" required [(ngModel)]="password"
+                  name="Taper password" required>
         </div>
-        <button class="btn  btn-block send my-3"  type="submit" >SE CONNECTER</button>
+        <button class="btn  btn-block send my-3"  type="submit" (click)="login()">SE CONNECTER</button>
         <button class="btn  btn-block send my-1"  (click)="vers_inscription()">S'INSCRIRE</button>
       <a href="" class="mx-3 my-2"><p >Mot de pass oublier?</p></a>
       </form>
