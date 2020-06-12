@@ -67,7 +67,7 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'nos_stat',
+    path: 'statistics/nos_stat',
     component: NosStatComponent
   },
 ];
