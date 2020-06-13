@@ -36,7 +36,31 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import {ProfileComponent} from "./pages/profile/profile.component";
 import {MessageComponent} from "./pages/accueil-isolement/chat/message/message.component";
+import { EnseignementEtudComponent } from './pages/enseignement-etud/enseignement-etud.component';
+import { EnseignementCreateurComponent } from './pages/enseignement-createur/enseignement-createur.component';
+import { EnseignementListMescoursComponent } from './pages/enseignement-list-mescours/enseignement-list-mescours.component';
+import { EnseignementForumComponent } from './pages/enseignement-forum/enseignement-forum.component';
 const routes: Routes = [
+  {
+    path: 'enseignement/createur/mescours',
+    component: EnseignementListMescoursComponent
+  },
+  {
+    path: 'enseignement/createur',
+    component: EnseignementCreateurComponent
+  },
+  {
+    path: 'enseignement/createur/mescours/createurs',
+    component: EnseignementCreateurComponent
+  },
+  {
+    path: 'enseignement/etudiant',
+    component: EnseignementEtudComponent
+  },
+  {
+    path: 'enseignement/etudiant/cours',
+    component: EnseignementEtudComponent
+  },
   {
     path: 'inscription',
     component: InscriptionComponent
