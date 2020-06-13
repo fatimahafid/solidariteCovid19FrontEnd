@@ -18,7 +18,6 @@ import {IsolementCommancerComponent} from './pages/accueil-isolement/isolement-c
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule, Routes} from '@angular/router';
 import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
-import { AccueilStatisticsComponent } from './pages/accueil-statistics/accueil-statistics.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {_MatMenuDirectivesModule, MatMenuModule} from '@angular/material/menu';
@@ -86,11 +85,6 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'statistics',
-    component: AccueilStatisticsComponent
-  },
-
-  {
     path: 'chat',
     component: ChatComponent
   },
@@ -106,7 +100,6 @@ const routes: Routes = [
     path: 'message',
     component: MessageComponent
   },
-
   {
     path: '',
     component: HomePageComponent
@@ -128,7 +121,6 @@ const routes: Routes = [
     IsolementHeadComponent,
     IsolementCarouselComponent,
     IsolementCommancerComponent,
-    AccueilStatisticsComponent,
     ChatComponent,
     UsersComponent,
     RoomChatComponent,
@@ -155,7 +147,6 @@ const routes: Routes = [
     MatStepperModule,
     ReactiveFormsModule
   ],
-
   providers: [],
   bootstrap: [PagesComponent]
 })

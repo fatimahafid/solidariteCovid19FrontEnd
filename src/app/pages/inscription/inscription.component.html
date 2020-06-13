@@ -55,7 +55,7 @@
         <a href=""><i class="fa fa-twitter mx-3 fa-2x icon"></i></a>
       </div>
     </div>
-    <form class="col-md-5 back-inscription" [formGroup]="this.crudApi.dataForm" (ngSubmit)="onSubmit()">
+    <form class="col-md-5 back-inscription ">
       <div class="row">
         <i class="fa fa-user-plus fa-3x mx-auto my-3"></i>
       </div>
@@ -65,59 +65,28 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="nom">Nom</label>
-          <input type="text" class="form-control input1"  placeholder="Entrer votre nom" formControlName="nom" id="nom">
-          <div *ngIf="f.nom.touched && f.nom.invalid" class="alert alert-danger">
-            <div *ngIf="f.nom.errors.required">champ obligatoire</div>
-            <div *ngIf="f.nom.errors.minlength">3 caractères au moins</div>
-          </div>
+          <input type="text" class="form-control input1" id="nom" name="nom" placeholder="Entrer votre nom">
         </div>
         <div class="form-group col-md-6">
           <label for="prenom">prenom</label>
-          <input type="text" class="form-control input1"  placeholder="Entrer votre prenom" formControlName="prenom" id="prenom">
-          <div *ngIf="f.prenom.touched && f.prenom.invalid" class="alert alert-danger">
-            <div *ngIf="f.prenom.errors.required">champ obligatoire</div>
-            <div *ngIf="f.prenom.errors.minlength">3 caractères au moins</div>
-          </div>
+          <input type="text" class="form-control input1" id="prenom" name="prenom" placeholder="Entrer votre prenom">
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control input1 "  placeholder="exemple@gmail.com" formControlName="email" id="email">
-        <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
-          <div *ngIf="f.email.errors.required">champ obligatoire</div>
-          <div *ngIf="f.email.errors.email">email malformé</div>
-        </div>
+        <input type="email" class="form-control input1 " id="email" placeholder="exemple@gmail.com">
       </div>
       <div class="form-group">
-        <label for="login">Login</label>
-        <input type="text" class="form-control input1"  placeholder="Entrer votre login" formControlName="login" id="login" [(ngModel)]="user.login">
-        <div *ngIf="f.login.touched && f.login.invalid" class="alert alert-danger">
-          <div *ngIf="f.login.errors.required">champ obligatoire</div>
-          <div *ngIf="f.login.errors.minlength">6 caractères au moins</div>
-        </div>
+        <label for="inputlogin">Login</label>
+        <input type="text" class="form-control input1" id="inputlogin" placeholder="Entrer votre login">
       </div>
       <div class="form-group">
         <label for="password">Mot de pass</label>
-        <input type="password" class="form-control input1" id="password" placeholder="Entrer votre mot de passe" formControlName="password">
-        <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
-          <div *ngIf="f.password.errors.required">champ obligatoire</div>
-          <div *ngIf="f.password.errors.minlength">8 caractères au moins</div>
-        </div>
+        <input type="password" class="form-control input1" id="password" placeholder="Entrer votre mot de passe">
       </div>
       <div class="form-group">
-        <label for="confirmepassword"> confirmation du mot de pass</label>
-        <input type="password" class="form-control input1" id="confirmepassword" placeholder=" confirmation du mot de passe" formControlName="confirmepassword">
-        <div *ngIf="f.confirmepassword.touched && f.confirmepassword.invalid" class="alert alert-danger">
-          <div *ngIf="f.confirmepassword.errors.required">champ obligatoire</div>
-          <div *ngIf="f.confirmepassword.errors.confirmedValidator">non conforme au mote de passe</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="tel">Numero de telephone</label>
-        <input type="text" class="form-control input1" id="tel" placeholder="Entrer votre num telephone" formControlName="tel">
-        <div *ngIf="f.tel.touched && f.tel.invalid" class="alert alert-danger">
-          <div *ngIf="f.tel.errors.required">champ obligatoire</div>
-        </div>
+        <label for="confirme-password"> confirmation du mot de pass</label>
+        <input type="password" class="form-control input1" id="confirme-password" placeholder=" confirmation du mot de passe">
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
@@ -141,7 +110,7 @@
           </select>
         </div>
       </div>
-      <button class="btn  btn-block send my-1" type="submit" [disabled]="!this.crudApi.dataForm.valid">S'INSCRIRE</button>
+      <button class="btn  btn-block send my-1" type="submit" >S'INSCRIRE</button>
       <button class="btn  btn-block send my-3" (click)="vers_connextion()">SE CONNECTER</button>
     </form>
   </div>

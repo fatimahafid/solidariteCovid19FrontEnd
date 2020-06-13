@@ -24,15 +24,15 @@
         </div>
         <div class="form-row mx-auto">
           <label for="loginname">Login</label>
-          <input type="text" class="form-control input1" id="loginname" placeholder="Entrer votre login" required [(ngModel)]="loginname"
+          <input type="text" class="form-control input1" id="loginname" placeholder="Entrer votre login" required
                  name="loginname"  required>
         </div>
         <div class="form-row mx-auto position-relative">
           <label for="password">Mot de pass</label>
-           <input type="password" class="form-control input1" id="password" placeholder="Entrer votre mot de passe" required [(ngModel)]="password"
+           <input type="password" class="form-control input1" id="password" placeholder="Entrer votre mot de passe" required
                   name="Taper password" required>
         </div>
-        <button class="btn  btn-block send my-3"  type="submit" (click)="login()">SE CONNECTER</button>
+        <button class="btn  btn-block send my-3"  type="submit" >SE CONNECTER</button>
         <button class="btn  btn-block send my-1"  (click)="vers_inscription()">S'INSCRIRE</button>
       <a href="" class="mx-3 my-2"><p >Mot de pass oublier?</p></a>
       </form>
