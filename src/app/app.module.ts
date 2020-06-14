@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatSliderModule } from '@angular/material/slider';
 import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -18,31 +17,34 @@ import {IsolementCommancerComponent} from './pages/accueil-isolement/isolement-c
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule, Routes} from '@angular/router';
 import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {_MatMenuDirectivesModule, MatMenuModule} from '@angular/material/menu';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { ChatComponent } from './pages/accueil-isolement/chat/chat.component';
-import { UsersComponent } from './pages/accueil-isolement/chat/users/users.component';
-import { RoomChatComponent } from './pages/accueil-isolement/chat/room-chat/room-chat.component';
-import {MatStepperModule} from "@angular/material/stepper";
-import {ReactiveFormsModule} from "@angular/forms";
-import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
-import {ProfileComponent} from "./pages/profile/profile.component";
-import {MessageComponent} from "./pages/accueil-isolement/chat/message/message.component";
+import { AccueilStatisticsComponent } from './pages/accueil-statistics/accueil-statistics.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {DatePipe} from "@angular/common";
+import {User} from "./controller/model/user.model";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatTableModule} from "@angular/material/table";
+import {MatInputModule} from "@angular/material/input";
+import { ChartModule } from '@syncfusion/ej2-angular-charts';
+import { CategoryService, LineSeriesService} from '@syncfusion/ej2-angular-charts';
+import { NosStatComponent } from './pages/nos-stat/nos-stat.component';
+import { NgApexchartsModule } from "ng-apexcharts";
 import { EnseignementEtudComponent } from './pages/enseignement-etud/enseignement-etud.component';
 import { EnseignementCreateurComponent } from './pages/enseignement-createur/enseignement-createur.component';
 import { EnseignementListMescoursComponent } from './pages/enseignement-list-mescours/enseignement-list-mescours.component';
 import { EnseignementForumComponent } from './pages/enseignement-forum/enseignement-forum.component';
+
+
 const routes: Routes = [
   {
     path: 'enseignement/createur/mescours',
     component: EnseignementListMescoursComponent
+  },
+  {
+    path: 'inscription',
+    component: InscriptionComponent
   },
   {
     path: 'enseignement/createur',
@@ -59,10 +61,6 @@ const routes: Routes = [
   {
     path: 'enseignement/etudiant/cours',
     component: EnseignementEtudComponent
-  },
-  {
-    path: 'inscription',
-    component: InscriptionComponent
   },
   {
     path: 'voisinage',
@@ -85,24 +83,16 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'chat',
-    component: ChatComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
-  },
-  {
-    path: 'edit_profile',
-    component: EditProfileComponent
-  },
-  {
-    path: 'message',
-    component: MessageComponent
+    path: 'statistics',
+    component: AccueilStatisticsComponent
   },
   {
     path: '',
     component: HomePageComponent
+  },
+  {
+    path: 'statistics/nos_stat',
+    component: NosStatComponent
   },
 ];
 @NgModule({
@@ -121,33 +111,31 @@ const routes: Routes = [
     IsolementHeadComponent,
     IsolementCarouselComponent,
     IsolementCommancerComponent,
-    ChatComponent,
-    UsersComponent,
-    RoomChatComponent,
-    ProfileComponent,
-    EditProfileComponent,
-
+    AccueilStatisticsComponent,
+    NosStatComponent,
+    EnseignementEtudComponent,
+    EnseignementCreateurComponent,
+    EnseignementListMescoursComponent,
+    EnseignementForumComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
     NgbCarouselModule,
+    FormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    MatSliderModule,
-    MatSidenavModule,
-    _MatMenuDirectivesModule,
-    MatMenuModule,
-    MatExpansionModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatTableModule,
     MatInputModule,
-    MatCardModule,
-    MatDialogModule,
-    MatDatepickerModule,
-    MatAutocompleteModule,
-    MatStepperModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
+    ChartModule,
+    NgApexchartsModule,
+],
+
+  providers: [DatePipe,User,CategoryService, LineSeriesService],
   bootstrap: [PagesComponent]
 })
 export class AppModule { }

@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"> </div>
+    <div class="col-md-4">
+      <div class="insidecard text-center">Notre famille est de <p class="text-center" style="color: rgba(64,7,153,0.82); font-size: 20px;">200 membres</p></div>
+    </div>
+    <div class="col-md-4"> </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="insidecard2 text-center">Vidéos mis en ligne <p class="text-center" style="color: rgba(64,7,153,0.82); font-size: 20px;">200 vidéos</p></div>
+      </div>
+      <div class="col-md-4">
+        <div class="insidecard2 text-center">Offres publiés <p class="text-center" style="color: rgba(64,7,153,0.82); font-size: 20px;">200 offres</p></div>
+      </div>
+      <div class="col-md-4">
+        <div class="insidecard2 text-center">Postes partagés<p class="text-center" style="color: rgba(64,7,153,0.82); font-size: 20px;">200 postes</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h2 style="color: #4f3cda;">Nos statestique pour Aujourd'hui</h2>
+      <div id="chart">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [dataLabels]="chartOptions.dataLabels"
+          [plotOptions]="chartOptions.plotOptions"
+          [yaxis]="chartOptions.yaxis"
+          [xaxis]="chartOptions.xaxis"
+          [legend]="chartOptions.legend"
+          [colors]="chartOptions.colors"
+        ></apx-chart>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h5 class="para">
+        chaque jour plusieurs utilisateurs fidèles contribuent pour atteindre nos objectifs
+      </h5>
+    </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h5 class="para">
+      Grace à votre confiance et à vos paticpations notre platforme evolue jour aprés jour...
+      </h5>
+    </div>
+
+
+    <div class="col-md-6">
+      <h2 style="color: #4f3cda;">Chaque jour on evolue grace à vous</h2>
+      <div id="chart1">
+        <apx-chart
+          [series]="chartOptions1.series"
+          [chart]="chartOptions1.chart"
+          [xaxis]="chartOptions1.xaxis"
+          [stroke]="chartOptions1.stroke"
+          [dataLabels]="chartOptions1.dataLabels"
+          [yaxis]="chartOptions1.yaxis"
+          [labels]="chartOptions1.labels"
+          [legend]="chartOptions1.legend"
+          [title]="chartOptions1.title"
+          [subtitle]="chartOptions1.subtitle"
+        ></apx-chart>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>
+
+
