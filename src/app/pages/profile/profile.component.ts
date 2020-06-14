@@ -9,7 +9,7 @@ import {EditProfileComponent} from "../edit-profile/edit-profile.component";
 })
 export class ProfileComponent implements OnInit {
   image = ['assets/login-signin/Images/personne1.jpg','assets/login-signin/Images/image33.jpeg']
-  constructor(private dialog: MatDialog,config: NgbCarouselConfig) { }
+  constructor(public dialog: MatDialog,config: NgbCarouselConfig) { }
   ngOnInit(): void {
   }
   openDialog(): void {

@@ -10,7 +10,7 @@ export class EditProfileComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder,@Inject(MAT_DIALOG_DATA) public data:any) { }
+  constructor(private _formBuilder: FormBuilder,@Inject(MAT_DIALOG_DATA) public data: any) { }
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]

@@ -20,6 +20,7 @@ import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
 import { AccueilStatisticsComponent } from './pages/accueil-statistics/accueil-statistics.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { MatSliderModule } from '@angular/material/slider';
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DatePipe} from "@angular/common";
@@ -35,7 +36,14 @@ import { EnseignementEtudComponent } from './pages/enseignement-etud/enseignemen
 import { EnseignementCreateurComponent } from './pages/enseignement-createur/enseignement-createur.component';
 import { EnseignementListMescoursComponent } from './pages/enseignement-list-mescours/enseignement-list-mescours.component';
 import { EnseignementForumComponent } from './pages/enseignement-forum/enseignement-forum.component';
-
+import {ChatComponent} from "./pages/accueil-isolement/chat/chat.component";
+import {ProfileComponent} from "./pages/profile/profile.component";
+import {RoomChatComponent} from "./pages/accueil-isolement/chat/room-chat/room-chat.component";
+import {MessageComponent} from "./pages/accueil-isolement/chat/message/message.component";
+import {UsersComponent} from "./pages/accueil-isolement/chat/users/users.component";
+import {EditProfileComponent} from "./pages/edit-profile/edit-profile.component";
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatDialogModule} from "@angular/material/dialog";
 
 const routes: Routes = [
   {
@@ -87,13 +95,25 @@ const routes: Routes = [
     component: AccueilStatisticsComponent
   },
   {
-    path: '',
-    component: HomePageComponent
-  },
-  {
     path: 'statistics/nos_stat',
     component: NosStatComponent
   },
+  {
+    path: 'profile/chat',
+    component: ChatComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'editprofile',
+    component: EditProfileComponent
+  },
+  {
+    path: '',
+    component: HomePageComponent
+  }
 ];
 @NgModule({
   declarations: [
@@ -117,6 +137,12 @@ const routes: Routes = [
     EnseignementCreateurComponent,
     EnseignementListMescoursComponent,
     EnseignementForumComponent,
+    RoomChatComponent,
+    UsersComponent,
+    ChatComponent,
+    ProfileComponent,
+    EditProfileComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -133,7 +159,10 @@ const routes: Routes = [
     MatInputModule,
     ChartModule,
     NgApexchartsModule,
-],
+    MatStepperModule,
+    MatSliderModule,
+    MatDialogModule,
+  ],
 
   providers: [DatePipe,User,CategoryService, LineSeriesService],
   bootstrap: [PagesComponent]

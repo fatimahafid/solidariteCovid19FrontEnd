@@ -1,60 +1,129 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      Culpa cupiditate, ex excepturi facere in iure porro voluptatibus? Facilis ipsa
-      iure minima nemo voluptatem? A iusto neque praesentium ullam veritatis, voluptate!
-      </p>
+<div id="Header">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+
+      </div>
     </div>
-    <div class="col-md-6">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Culpa cupiditate, ex excepturi facere in iure porro voluptatibus? Facilis ipsa
-        iure minima nemo voluptatem? A iusto neque praesentium ullam veritatis, voluptate!
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Culpa cupiditate, ex excepturi facere in iure porro voluptatibus? Facilis ipsa
-        iure minima nemo voluptatem? A iusto neque praesentium ullam veritatis, voluptate!
-      </p>
-    </div>
-    <div class="col-md-6">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Culpa cupiditate, ex excepturi facere in iure porro voluptatibus? Facilis ipsa
-        iure minima nemo voluptatem? A iusto neque praesentium ullam veritatis, voluptate!
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Culpa cupiditate, ex excepturi facere in iure porro voluptatibus? Facilis ipsa
-        iure minima nemo voluptatem? A iusto neque praesentium ullam veritatis, voluptate!
-      </p>
-    </div>
-    <div class="col-md-6">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Culpa cupiditate, ex excepturi facere in iure porro voluptatibus? Facilis ipsa
-        iure minima nemo voluptatem? A iusto neque praesentium ullam veritatis, voluptate!
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Culpa cupiditate, ex excepturi facere in iure porro voluptatibus? Facilis ipsa
-        iure minima nemo voluptatem? A iusto neque praesentium ullam veritatis, voluptate!
-      </p>
-    </div>
-    <div class="col-md-6">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Culpa cupiditate, ex excepturi facere in iure porro voluptatibus? Facilis ipsa
-        iure minima nemo voluptatem? A iusto neque praesentium ullam veritatis, voluptate!
-      </p>
-    </div>
-  </div>
-  <app-footer></app-footer>
+  </section>
 </div>
+
+<div class="container">
+  <div class="button_cont" ><a class="example_f" routerLink="nos_stat"><span>Nos statéstiques</span></a></div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div id="total-cases" class="card mt-3 shadow-sm">
+        <div class="card-body pb-2">
+          <div class="row">
+            <div class="col-7 text-left">
+              <h5 class="card-title font-14 text-muted">Toatal des cas confirmés</h5>
+              <h4 class="mb-0 font-30">8533</h4>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row align-items-center">
+            <div class="col-9">
+              <span class="font-13">mise à jour du "date"</span>
+            </div>
+            <div class="col-3 text-left">
+              <span id="new-case" class="badge pr-2 pl-2">25<i class="feather icon-trending-up mr-1"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div id="excluded-cases" class="card mt-3 shadow-sm">
+        <div class="card-body pb-2">
+          <div class="row">
+            <div class="col-7 text-left">
+              <h5 class="card-title font-14 text-muted">Toatal des cas exclus</h5>
+              <h4 class="mb-0 font-30">355817</h4>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row align-items-center">
+            <div class="col-9">
+              <span class="font-13">mise à jour du "date"</span>
+            </div>
+            <div class="col-3 text-left">
+              <span id="new-excluded-cases" class="badge pr-2 pl-2">8274<i class="feather icon-exclude-up mr-1"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="conrainer table-cases">
+  <div class="row">
+    <div class="col-md-2"> </div>
+    <div class="col-md-8">
+      <h2 class="text-center" style="color: #400799;">Tableau des cas par région</h2>
+      <mat-form-field>
+        <mat-label style="color: #5f4dee;">chercher</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+      </mat-form-field>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 ">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Region">
+          <th mat-header-cell *matHeaderCellDef> Région </th>
+          <td mat-cell *matCellDef="let element"> {{element.Region}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Nombre_totale">
+          <th mat-header-cell *matHeaderCellDef> Nombre totale de cas </th>
+          <td mat-cell *matCellDef="let element"> {{element.Nombre_totale}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Nouveaux_cas">
+          <th mat-header-cell *matHeaderCellDef> Nouveaux cas </th>
+          <td mat-cell *matCellDef="let element"> {{element.Nouveaux_cas}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+
+
+    </div>
+    <div class="col-md-2"> </div>
+  </div>
+</div>
+
+<div class="container graph">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h2 class="text-center" style="color: #400799;">Graphe d'evolution</h2>
+
+      <ejs-chart id="chart-container" [primaryXAxis]='primaryXAxis'>
+        <e-series-collection>
+          <e-series [dataSource]='chartData' type='Line' xName='month' yName='cas' name='cas'></e-series>
+        </e-series-collection>
+      </ejs-chart>
+
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+<app-footer></app-footer>
+
 
