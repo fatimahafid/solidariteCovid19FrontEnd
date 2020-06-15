@@ -19,7 +19,7 @@
   border-top-right-radius: 30px;
 }
 .parent{
- margin-top:50px;
+  margin-top:50px;
   margin-bottom: 10px;
   background-color: #f3f7fd;
 
@@ -79,7 +79,7 @@
 .titre{
   color: black;
   font-family: Algerian;
- }
+}
 .alert{
   border-bottom-left-radius: 30px;
   border-top-right-radius: 30px;

@@ -1,0 +1,161 @@
+.list{
+  background-color: white;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 90%;
+  padding: 20px 0px 50px 0px;
+  border-radius: 15px;
+  margin-left: 50px;
+}
+.listblock{
+  padding: 20px;
+  border-bottom: 1px solid;
+  border-bottom-color: #c2c3c4;
+  display: inline-list-item;
+
+
+}
+
+.profileimage {
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.19);
+  width: 35px;
+  height: 35px;
+
+  margin-bottom: 20px;
+}
+
+.blockitems{
+  display: inline-block;
+  margin-right:10px;
+
+}
+
+.buttons{
+  display: inline-block;
+  height: 35px;
+  align-items: center;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.19);
+  opacity: 1;
+
+}
+.mybtn1{
+  background-color: #5cb85c;
+  width: 66px;
+  margin-right: 10px;
+
+}
+.mybtn1 img{
+  margin-top: 5%;
+  margin-left: 25%;
+}
+.mybtn2 img{
+  margin-top: 5%;
+  margin-left: 20%;
+
+}
+.mybtn2{
+  background-color: #d9534f;
+  width:45px;
+
+
+
+}
+.buttons img{
+  align-items: center;
+  height: 30px;
+  width: 30px;
+
+
+}
+
+.buttoncotainer{
+  padding-top: 70%;
+  padding-left: 10%;
+}
+
+.sousblockitems{
+  display: inline;
+
+}
+.namedate{
+  padding-top: 10px;
+}
+
+.date {
+  color: #c2c3c4;
+  font-size: 13px;
+  margin-right:5px;
+}
+.ville{
+  color: #c2c3c4;
+  font-size: 13px;
+}
+.service{
+  font-weight: bold;
+}
+
+#leftsidebar
+{
+  padding-left: 10px;
+  padding-right: 20px;
+
+
+}
+
+
+.insidleftbar{
+  background-color: #efefef;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 100%;
+  margin: 0;
+  border-radius: 0 15px 0 0 ;
+  padding-left: 20px;
+
+}
+icone{
+  padding-left:20px;
+  background-position: center;
+
+}
+
+.socialmedia{
+  margin: 0;
+  width: 23px;
+  height: 23px;
+  inset-block: auto;
+}
+
+
+#profileimg{
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 0px 12px 0;
+  position: center;
+  width: 80px;
+  height: 80px;
+  margin-left: 30px;
+
+
+}
+
+.cont{
+  margin-top: 10%;
+}
+
+
+.blocks{
+  border-bottom: 1px solid;
+  border-bottom-color: #c2c3c4;
+  padding: 20px 5% 20px 5%;
+  align-items: center;
+
+
+
+}
+
+h3{
+  text-align: center;
+  font-size: 16px;
+}
+
