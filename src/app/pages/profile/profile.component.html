@@ -4,64 +4,63 @@
      <div class="col-md-8 card">
        <div class="row shadow" style="position: relative">
            <img [src]="image[1]"style="width: 100% ;height: 200px">
-           <img [src]="image[0]" class="imageprofile shadow" style="position: absolute;bottom: -30px;left: 40%">
-           <label  class="nom" style="position:absolute;bottom: -70px;left: 35%">ALISIA JOHN</label>
+         <ng-container *ngIf="this.profilOwner.image; then thenBlock0 else elseBlock0"></ng-container>
+         <ng-template #thenBlock0><img src="../../../assets/user/{{this.profilOwner.image}}" class="imageprofile shadow" style="position: absolute;bottom: -30px;left: 40%"></ng-template>
+         <ng-template #elseBlock0><img src="../../../assets/user/user_def.png" class="imageprofile shadow" style="position: absolute;bottom: -30px;left: 40%"></ng-template>
+           <label  class="nom" style="position:absolute;bottom: -70px;left: 35%">{{this.profilOwner.nom}} {{this.profilOwner.prenom}}</label>
        </div>
        <div class="row inder">
            <div class="col-md-1"></div>
          <div class="col-md-5 info_personnels mt-2" >
            <div class="row justify-content-start my-3 align-content-center">
              <i class="fa fa-envelope fa-2x mx-1 " ></i>
-             <label  class="mx-1 my-1"> exemple@gmail.com</label>
+             <label  class="mx-1 my-1"> {{this.profilOwner.email}}</label>
            </div>
            <div class="row justify-content-start my-3">
              <i class="fa fa-mobile-phone fa-3x mx-1 " ></i>
-             <label  class="mx-1 my-1" >0645126878 </label>
+             <label  class="mx-1 my-1" >{{this.profilOwner.tel}} </label>
            </div>
            <div class="row justify-content-start my-3">
              <i class="fa fa-building fa-2x mx-1"  ></i>
              <label class="mx-1 my-1" > Marrakech</label>
            </div>
-           <div class="row justify-content-start my-3">
-             <i class="fa fa-birthday-cake fa-2x mx-1"  ></i>
-             <label  class="mx-1 my-1" > 30 ans</label>
-           </div>
          </div>
          <div class="col-md-5 info_participation mt-2">
            <div class="row justify-content-start my-3 align-content-center">
              <i class="fa fa-video fa-2x mx-1 " ></i>
-             <label  class="mx-1 my-1">Video Publiees : +2 </label>
+             <label  class="mx-1 my-1">Video Publiees : +{{this.countStatut}}</label>
            </div>
            <div class="row justify-content-start my-3 align-content-center ">
              <i class="fa fa-plus fa-2x mx-1 "  ></i>
-             <label  class="mx-1 my-1">Offres Publiees : +2</label>
+             <label  class="mx-1 my-1">Offres Publiees : +{{this.countStatut}}</label>
            </div>
            <div class="row justify-content-start my-3 align-content-center">
              <i class="fa fa-handshake fa-2x mx-1 "  ></i>
-             <label  class="mx-1 my-1">Offres Acceptees : +2</label>
+             <label  class="mx-1 my-1">Offres Acceptees : +{{this.countStatut}}</label>
            </div>
            <div class="row justify-content-start my-3 align-content-center ">
              <i class="fa fa-plus fa-2x mx-1 "  ></i>
-             <label  class="mx-1 my-1">Demandes Publiees : +2</label>
+             <label  class="mx-1 my-1">Demandes Publiees : +{{this.countStatut}}</label>
            </div>
            <div class="row justify-content-start my-3 align-content-center">
               <i class="fa fa-handshake fa-2x mx-1 "  ></i>
-             <label style="color:#400799;" class="mx-1 my-1">Demandes Acceptees : +2</label>
+             <label style="color:#400799;" class="mx-1 my-1">Demandes Acceptees : +{{this.countStatut}}</label>
            </div>
            <div class="row justify-content-start my-3 align-content-center">
              <i class="fa fa-comment fa-2x mx-1 " ></i>
-             <label class="mx-1 my-1">Statut : +2</label>
+             <label class="mx-1 my-1">Statut : +{{this.countStatut}}</label>
            </div>
            <div class="row justify-content-start my-3 align-content-center">
              <i class="fa fa-question fa-2x mx-1 " ></i>
-             <label class="mx-1 my-1">Forum : +2</label>
+             <label class="mx-1 my-1">Forum : +{{this.countStatut}}</label>
            </div>
          </div>
            <div class="col-md-1"></div>
    </div>
        <div class="row justify-content-end">
-       <a routerLink="chat" class="mx-2 mb-2"> <i class="fa fa-comment fa-3x  mr-2" ></i></a>
-         <i class="fa fa-edit fa-3x mr-2"  (click)="openDialog()"></i>
+         <ng-container *ngIf="this.testProfile(); then thenBlock else elseBlock"></ng-container>
+         <ng-template #elseBlock><a routerLink="chat" class="mx-2 mb-2"> <i class="fa fa-comment fa-3x  mr-2" ></i></a></ng-template>
+         <ng-template #thenBlock><i class="fa fa-edit fa-3x mr-2"  (click)="openDialog()"></i></ng-template>
        </div>
  </div>
      <div class="col-md-2"></div>

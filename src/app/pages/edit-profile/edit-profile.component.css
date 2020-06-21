@@ -5,3 +5,13 @@
   background-color: #400799;
   color:white;
 }
+.alert{
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  width: 190px;
+  font-size: 10px;
+  height: 15px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  color: darkred;
+}

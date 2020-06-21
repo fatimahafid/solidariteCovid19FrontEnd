@@ -5,14 +5,15 @@
 
 
       <img src="../../../assets/home-page/images/home.jpg" style="background-repeat:no-repeat;height: 655px;width: 100%;">
-
+  <ng-container *ngIf="this.testLogin()==false; then thenblock"></ng-container>
+  <ng-template #thenblock>
     <div class="navbar-custom" style="position:absolute;top:360px; width:600px; height:400px; z-index:2;font-size:200%">
       <span class="nav-item">
       <a class=" btn-outline-sm" routerLink="inscription" style="margin-left: 760px;margin-top: 130px;width: 300px;height: 70px;font:  700 0.875rem/0  sans-serif;font-size: 24px;text-align: center;">INSCRIVEZ VOUS!<br><br> <br><br><h5 style="font:  700 0.875rem/0  sans-serif;text-align: center;margin-top: 30px">GRATUITEMENT</h5>
       </a>
       </span>
     </div>
-
+  </ng-template>
 </header> <!-- end of header -->
 
 <!-- end of header -->
@@ -23,7 +24,7 @@
     <div class="row">
       <div class="col-lg-12">
 
-        <h2 class="h2-heading">NOS ESPACES</h2>
+        <h2 class="h2-heading text-center">NOS ESPACES</h2>
       </div> <!-- end of col -->
     </div> <!-- end of row -->
     <div class="row">
@@ -89,7 +90,7 @@
     <div class="row">
       <div class="col-lg-12">
 
-        <h2 class="h2-heading">QUI SOMMES NOUS ?</h2>
+        <h2 class="h2-heading text-center">QUI SOMMES NOUS ?</h2>
         <p class="p-heading">Plateforme de solidarité COVID-19</p>
       </div> <!-- end of col -->
     </div> <!-- end of row -->
@@ -223,7 +224,7 @@
 
         <!-- Video Preview -->
 
-        <h2 class="h2-heading">3 MIN POUR MIEUX COMPRENDRE ...</h2>
+        <h2 class="h2-heading text-center">3 MIN POUR MIEUX COMPRENDRE ...</h2>
         <br>
         <div class="image-container">
           <div class="video-wrapper">

@@ -384,7 +384,7 @@ textarea:focus, input:focus, .uneditable-input:focus {
 
 }
 
-#addcomment    {
+.addcommentN    {
   width: 15%;
   margin-left: 0;
 
@@ -442,3 +442,7 @@ textarea:focus, input:focus, .uneditable-input:focus {
   background-color: white;
   border-color: white;
 }
+.a {
+  cursor: pointer;
+}
+

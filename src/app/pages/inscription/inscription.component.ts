@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {UserService} from "../../controller/service/user.service";
-import {User} from "../../controller/model/user.model";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ToastrService} from "ngx-toastr";
+import {UserService} from '../../controller/service/user.service';
+import {User} from '../../controller/model/user.model';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-inscription',
@@ -12,7 +12,7 @@ import {ToastrService} from "ngx-toastr";
 })
 export class InscriptionComponent implements OnInit {
 
-  constructor(private _user : User ,private route: Router,public crudApi: UserService ,public fb: FormBuilder,public toastr: ToastrService) { }
+  constructor(private _user: User , private route: Router, public crudApi: UserService , public fb: FormBuilder, public toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.infoForm();
@@ -32,7 +32,7 @@ export class InscriptionComponent implements OnInit {
       confirmepassword: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       tel: ['', [Validators.required]],
-    },{
+    }, {
       validator: this.ConfirmedValidator('password', 'confirmepassword')
     });
   }
@@ -42,10 +42,10 @@ export class InscriptionComponent implements OnInit {
   }
   onSubmit() {
     this.crudApi.login(this.user.login).subscribe(
-      data=>{
-        this.toastr.warning( 'ce login exste deja')
+      data => {
+        this.toastr.warning( 'ce login exste deja');
       },
-      error=>{
+      error => {
     if (this.crudApi.dataForm.value.password == this.crudApi.dataForm.value.confirmepassword)
     {
 
@@ -73,8 +73,8 @@ export class InscriptionComponent implements OnInit {
     });
   }
 
-  get user():User{
-    return this._user
+  get user(): User{
+    return this._user;
   }
 
   get f(){
@@ -93,7 +93,7 @@ export class InscriptionComponent implements OnInit {
       } else {
         matchingControl.setErrors(null);
       }
-    }
+    };
   }
 
 

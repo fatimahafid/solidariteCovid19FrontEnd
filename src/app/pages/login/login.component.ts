@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {NavigationEnd, NavigationStart, Router, RouterEvent} from '@angular/router';
 import {ToastrService} from "ngx-toastr";
 import {DatePipe} from "@angular/common";
 import {UserService} from "../../controller/service/user.service";
@@ -11,15 +11,16 @@ import {UserService} from "../../controller/service/user.service";
 })
 export class LoginComponent implements OnInit {
 
-  user: any={};
-  loginname : String;
-  password : String;
-  name : string;
+  user: any = {};
+  loginname: String;
+  password: String;
+  name: string;
   Wdate;
-  annee : 0;
+  annee: 0;
+  public showOverlay = true;
 
-  constructor(private router: Router,private userService : UserService,
-              public toastr: ToastrService,private datePipe : DatePipe) { }
+  constructor(private router: Router,private userService: UserService,
+              public toastr: ToastrService,private datePipe: DatePipe) {}
   ngOnInit(): void {
     this.userService.islogin = false;
     this.userService.admin = false;
@@ -40,17 +41,16 @@ export class LoginComponent implements OnInit {
 
         if (this.user.password == this.password)
         {
-          this.name = this.user.nom;
-          localStorage.setItem('name', this.name);
+          localStorage.setItem('id', this.user.id);
           this.userService.islogin = true;
-
           this.userService.suser = true;
-          this.toastr.success( 'all good ')
+          this.router.navigate(['home']);
+          this.toastr.success( 'connexion avec succés');
           }
 
         else
         {
-          this.toastr.warning( 'Mot de Passe  Incorrecte ')
+          this.toastr.warning( 'Mot de Passe  Incorrecte ');
         }
 
       },
@@ -69,7 +69,8 @@ export class LoginComponent implements OnInit {
 
   logout() {
     // remove user from local storage and set current user to null
-    localStorage.removeItem('name');
+    localStorage.removeItem('id');
 
   }
+
 }

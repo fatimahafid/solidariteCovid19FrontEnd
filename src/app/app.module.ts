@@ -53,11 +53,15 @@ import { MesOffresComponent } from './pages/mes-offres/mes-offres.component';
 import { MesparticipationsComponent } from './pages/mesparticipations/mesparticipations.component';
 import { MesdemandesComponent } from './pages/mesdemandes/mesdemandes.component';
 
-
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { PostComponent } from './pages/isolement/post/post.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {TypeStatut} from './controller/model/type-statut.model';
+import {CommentaireStatut} from './controller/model/commentaire-statut.model';
+
 
 
 const routes: Routes = [
@@ -248,32 +252,34 @@ const routes: Routes = [
     MesOffresComponent,
     MesparticipationsComponent,
     MesdemandesComponent,
+    PostComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot(routes),
-    NgbCarouselModule,
-    FormsModule,
-    HttpClientModule,
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatTableModule,
-    MatInputModule,
-    ChartModule,
-    NgApexchartsModule,
-    MatStepperModule,
-    MatSliderModule,
-    MatDialogModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatSelectModule,
-    MatExpansionModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule.forRoot(routes),
+        NgbCarouselModule,
+        FormsModule,
+        HttpClientModule,
+        ToastrModule.forRoot(),
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatTableModule,
+        MatInputModule,
+        ChartModule,
+        NgApexchartsModule,
+        MatStepperModule,
+        MatSliderModule,
+        MatDialogModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatSelectModule,
+        MatExpansionModule,
+        MatRadioModule
+    ],
 
-  providers: [DatePipe, User, CategoryService, LineSeriesService],
+  providers: [DatePipe, User, CategoryService, LineSeriesService, TypeStatut, CommentaireStatut],
   bootstrap: [PagesComponent]
 })
 export class AppModule { }

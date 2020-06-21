@@ -54,12 +54,25 @@
           <a class="nav-link page-scroll" href="#newsletterForm"style="color: #cbc5d6">CONTACTEZ NOUS</a>
         </li>
       </ul>
+      <ng-container *ngIf="this.testLogin()==false; then thenblock else elseblock"></ng-container>
+      <ng-template #thenblock>
       <span class="nav-item">
                     <a class="btn-outline-sm"  routerLink="login">CONNEXION</a>
                 </span>
       <span class="nav-item">
                     <a class="btn-outline-sm" routerLink="inscription">INSCRIPTION</a>
                 </span>
+      </ng-template>
+      <ng-template #elseblock>
+      <span class="nav-item">
+                    <a class="btn-outline-sm" routerLink="home" (click)="this.logout()">DECONNEXION</a>
+                </span>
+        <span class="nav-item">
+          <ng-container *ngIf="this.me.image != null; then thenblock1 else elseblock1"></ng-container>
+          <ng-template #thenblock1><a (click)="this.versProfile(this.me.login.toString())" class="a"><img src="../../../assets/user/{{this.me.image}}" class="profileimage"></a></ng-template>
+          <ng-template #elseblock1><a (click)="this.versProfile(this.me.login.toString())" class="a"><img src="../../../assets/user/user_def.png" class="profileimage"></a></ng-template>
+       </span>
+      </ng-template>
     </div>
   </div> <!-- end of container -->
 </nav> <!-- end of navbar -->

@@ -2,65 +2,83 @@
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel></ng-template>
+      <div>
       <mat-form-field class="mx-2">
         <mat-label>Nom</mat-label>
-        <input matInput placeholder="Nom" formControlName="firstCtrl" required>
+        <input matInput placeholder="Nom" formControlName="nom">
       </mat-form-field>
+      <div *ngIf="f1.nom.touched && f1.nom.invalid" class="alert">
+        <div *ngIf="f1.nom.errors.minlength">3 caractères au moins</div></div>
+      </div>
+      <div>
       <mat-form-field class="mx-2">
         <mat-label>Prenom</mat-label>
-        <input matInput placeholder="Prenom"  formControlName="firstCtrl" required>
+        <input matInput placeholder="Prenom"  formControlName="prenom">
       </mat-form-field>
-      <mat-form-field class="mx-2">
-        <mat-label>Age</mat-label>
-        <input matInput placeholder="Age" formControlName="firstCtrl" required>
-      </mat-form-field>
+      <div *ngIf="f1.prenom.touched && f1.prenom.invalid" class="alert">
+        <div *ngIf="f1.prenom.errors.minlength">3 caractères au moins</div></div>
+      </div>
       <div>
         <button mat-button matStepperNext class="btn" >Next</button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup" optional>
+  <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel></ng-template>
+      <div>
       <mat-form-field class="mx-2">
         <mat-label>Email</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="exemple@gmail.com" required>
+        <input matInput formControlName="email" placeholder="exemple@gmail.com">
       </mat-form-field>
-      <mat-form-field class="mx-2">
-        <mat-label>Ville</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Marrakech" required>
-      </mat-form-field>
+      <div *ngIf="f2.email.touched && f2.email.invalid" class="alert">
+        <div *ngIf="f2.email.errors.email">email malformé</div></div>
+      </div>
+      <div>
       <mat-form-field class="mx-2">
         <mat-label>Telephone</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="0652525252" required>
+        <input matInput formControlName="tel" placeholder="0652525252">
       </mat-form-field>
+      </div>
       <div>
         <button mat-button matStepperPrevious class="btn mx-1" >Back</button>
         <button mat-button matStepperNext class="btn mx-1" >Next</button>
       </div>
     </form>
   </mat-step>
-  <mat-step>
+
+  <mat-step [stepControl]="this.thirdFormGroup">
+    <form [formGroup]="this.thirdFormGroup">
     <ng-template matStepLabel ></ng-template>
+      <div>
     <mat-form-field class="mx-2">
-      <mat-label>Login</mat-label>
-      <input matInput formControlName="secondCtrl" placeholder="login" required>
-    </mat-form-field>
-    <mat-form-field>
       <mat-label>password</mat-label>
-      <input matInput formControlName="secondCtrl" placeholder="*********" required>
+      <input matInput formControlName="password" placeholder="*********" type="password">
     </mat-form-field>
+      <div *ngIf="f3.password.touched && f3.password.invalid" class="alert">
+        <div *ngIf="f3.password.errors.minlength">8 caractères au moins</div></div>
+      </div>
+      <div>
+    <mat-form-field>
+      <mat-label>confirmation password</mat-label>
+      <input matInput formControlName="passwordC" placeholder="*********" type="password" >
+    </mat-form-field>
+      <div *ngIf="f3.passwordC.touched && f3.password.value != '' && f3.passwordC.invalid" class="alert">
+        <div *ngIf="f3.passwordC.errors.required">champ obligatoire</div>
+        <div *ngIf="f3.passwordC.errors.confirmedValidator">non conforme au mote de passe</div></div>
+      </div>
     <div>
       <button mat-button matStepperPrevious class="btn mx-1" >Back</button>
       <button mat-button (click)="stepper.reset()" class="btn mx-1">Reset</button>
     </div>
+  </form>
   </mat-step>
 </mat-horizontal-stepper>
 <div class="row justify-content-end">
   <label class="btn btn-default btn-sm  btn-file"> Image
     <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
-    <input type="file" style="display: none;">
+    <input type="file" style="display: none;" (change)="this.detectfile($event)">
   </label>
-  <i mat-dialog-close="true" class="fa fa-check fa-3x mx-3 icon-bottom"></i>
+  <i mat-dialog-close="true" class="fa fa-check fa-3x mx-3 icon-bottom" (click)="this.updateUser()"></i>
   <i mat-dialog-close="false" class="fa fa-times fa-3x mx-3 icon-bottom"></i>
 </div>

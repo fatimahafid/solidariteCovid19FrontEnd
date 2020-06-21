@@ -119,28 +119,6 @@
             <div *ngIf="f.tel.errors.required">champ obligatoire</div>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputville">Ville</label>
-            <select id="inputville" class="form-control input1">
-              <option selected>Choose...</option>
-              <option>Marrakech</option>
-              <option>casablanca</option>
-              <option>safi</option>
-              <option>Autre</option>
-            </select>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputquartier">Quartier</label>
-            <select id="inputquartier" class="form-control input1">
-              <option selected>Choose...</option>
-              <option>Marrakech</option>
-              <option>casablanca</option>
-              <option>safi</option>
-              <option>Autre</option>
-            </select>
-          </div>
-        </div>
         <button class="btn  btn-block send my-1" type="submit" [disabled]="!this.crudApi.dataForm.valid">S'INSCRIRE</button>
         <button class="btn  btn-block send my-3" (click)="vers_connextion()">SE CONNECTER</button>
       </form>

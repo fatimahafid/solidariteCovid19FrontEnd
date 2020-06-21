@@ -351,3 +351,6 @@ a{
   font-weight: 600;
   color: #002752;
 }
+mat-form-field {
+  margin-right: 12px;
+}

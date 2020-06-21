@@ -13,5 +13,9 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  testLogin(): boolean{
+    if (localStorage.getItem('id') == null){return false; }
+    else { return true; }
+  }
 
 }
