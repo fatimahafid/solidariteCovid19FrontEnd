@@ -1,0 +1,60 @@
+<form class="" novalidate (ngSubmit)="save()">
+  <div class="form-row justify-content-center">
+    <h1 class="h1" style="color: #400799;">{{data.titre}}</h1>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <mat-form-field style="width: 100%;">
+        <mat-label> Ville</mat-label>
+        <mat-select (selectionChange)=" changeville($event)"  required>
+          <mat-option *ngFor="let ville of listVilles" [value]="ville.id">
+            {{ville.nom}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <mat-form-field style="width: 100%;">
+        <mat-label> Quartier</mat-label>
+        <mat-select (selectionChange)=" changequartier($event)"  required>
+          <mat-option *ngFor="let quartier of listQuartier" [value]="quartier.id">
+            {{quartier.nom}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <mat-form-field style="width: 100%;">
+        <mat-label> Service</mat-label>
+        <mat-select (selectionChange)=" changeservice($event)"  required>
+          <mat-option *ngFor="let service of listService" [value]="service.id">
+            {{service.libelle}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <mat-form-field class="example-full-width" style="width: 100%;">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."  required [(ngModel)]="demande.description" name="description"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="form-row justify-content-enter">
+    <label style="color:red" *ngIf="!datevalid">date invalide</label>
+  </div>
+  <div class="form-row justify-content-enter">
+    <input [matDatepicker]="basicDatepicker" style="width: 50%;"  (dateChange)="changedate($event.target)" required>
+    <mat-datepicker-toggle [for]="basicDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #basicDatepicker></mat-datepicker>
+
+  </div>
+  <button mat-dialog-close="true" type="submit"  class="my-3 btn btn-block btn-publier">Save</button>
+</form>

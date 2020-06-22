@@ -61,6 +61,9 @@ import { PostComponent } from './pages/isolement/post/post.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {TypeStatut} from './controller/model/type-statut.model';
 import {CommentaireStatut} from './controller/model/commentaire-statut.model';
+import { ModifieroffreComponent } from './pages/modifieroffre/modifieroffre.component';
+import { ModifierdemandeComponent } from './pages/modifierdemande/modifierdemande.component';
+import {MatIconModule} from "@angular/material/icon";
 
 
 
@@ -253,31 +256,34 @@ const routes: Routes = [
     MesparticipationsComponent,
     MesdemandesComponent,
     PostComponent,
+    ModifieroffreComponent,
+    ModifierdemandeComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        RouterModule.forRoot(routes),
-        NgbCarouselModule,
-        FormsModule,
-        HttpClientModule,
-        ToastrModule.forRoot(),
-        BrowserAnimationsModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatTableModule,
-        MatInputModule,
-        ChartModule,
-        NgApexchartsModule,
-        MatStepperModule,
-        MatSliderModule,
-        MatDialogModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatSelectModule,
-        MatExpansionModule,
-        MatRadioModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot(routes),
+    NgbCarouselModule,
+    FormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatInputModule,
+    ChartModule,
+    NgApexchartsModule,
+    MatStepperModule,
+    MatSliderModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatExpansionModule,
+    MatRadioModule,
+    MatIconModule
+  ],
 
   providers: [DatePipe, User, CategoryService, LineSeriesService, TypeStatut, CommentaireStatut],
   bootstrap: [PagesComponent]

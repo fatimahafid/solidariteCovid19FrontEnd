@@ -4,174 +4,73 @@
     <div class="insidleftbar">
 
       <div class="blocks" >
-        <img src="../../assets/offres/user.jpg" id="profileimg">
-        <h6>Maria borney</h6>
+        <img [src]="user_demandeur.image" id="profileimg">
+        <h6>{{user_demandeur.prenom}} {{user_demandeur.nom}}</h6>
         <div class="row" class="littearea">
           <img src="../../assets/offres/fb.png" class="socialmedia" >
           <img src="../../assets/offres/insta.png" class="socialmedia">
           <img src="../../assets/offres/twitter.png" class="socialmedia">
-
         </div>
       </div>
       <div class="blocks" >
         <img src="../../assets/offres/plus.png" class="socialmedia">
 
-        20 Demandes
+        {{demandefaites.length}} Demandes
         <br>
         <img src="../../assets/offres/plus.png" class="socialmedia">
 
-        50 Répones
+        {{nbr_repondeur}} Répones
       </div>
     </div>
-
-
-
   </div>
   <div class="col-md-9 listbg">
     <div class="list">
       <div class="listblock">
         <h3>Mes demandes publiées</h3>
       </div>
-
-      <div class="listblock">
-
-
+      <div class="listblock" *ngFor="let demande of demandefaites">
         <div class="row">
           <div class="col-md-9">
             <img src="../../assets/offres/user.jpg" class="profileimage blockitems">
             <div class="blockitems namedate" >
-              <span class="sousblockitems username" >User Name</span>
+              <span class="sousblockitems username" >{{demande.user.nom}} {{demande.user.prenom}}</span>
               <br>
-              <span class="sousblockitems date" >27 Mai 2020</span>
-              <span class="blockitems ville" >, Ville,Quartier</span>
-
-
+              <span class="sousblockitems date" >{{demande.dateDemande|date:'dd/MM/yyyy'}}</span>
+              <span class="blockitems ville" >,{{demande.ville.nom}},{{demande.quartier.nom}}r</span>
             </div>
             <br>
-            <span class="blockitems service" >Service</span>
-
-            <span class="blockitems desc" >descrption pour rajouter des autres informations qui peuvent etre utiles pour remplir ce  blok </span>
-
-          </div>
-
-          <div class="col-md-3" style="padding: 0;" >
-            <div class="buttoncotainer">
-              <a href="#" class="mybtn1 buttons">
-                <img src="../../assets/offres/check.png" ></a>
-              <a href="#" class="mybtn2 buttons">
-                <img src="../../assets/offres/x.png" ></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div class="listblock">
-
-
-        <div class="row">
-          <div class="col-md-9 ">
-            <img src="../../assets/offres/user.jpg" class="profileimage blockitems">
-            <div class="blockitems namedate" >
-              <span class="sousblockitems username" >User Name</span>
-              <br>
-              <span class="sousblockitems date" >27 Mai 2020</span>
-              <span class="blockitems ville" >, Ville,Quartier</span>
-
-
-            </div>
+            <span class="blockitems service" >{{demande.typeService.libelle}}</span>
             <br>
-            <span class="blockitems service" >Service</span>
-
-            <span class="blockitems desc" >descrption pour rajouter des autres informations qui peuvent etre utiles pour remplir ce  blok </span>
-
-          </div>
-
-          <div class="col-md-3" style="padding: 0;" >
-            <div class="buttoncotainer">
-              <a href="#" class="mybtn1 buttons">
-                <img src="../../assets/offres/check.png" ></a>
-              <a href="#" class="mybtn2 buttons">
-                <img src="../../assets/offres/x.png" ></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div class="listblock">
-
-
-        <div class="row">
-          <div class="col-md-9">
-            <img src="../../assets/offres/user.jpg" class="profileimage blockitems">
-            <div class="blockitems namedate" >
-              <span class="sousblockitems username" >User Name</span>
-              <br>
-              <span class="sousblockitems date" >27 Mai 2020</span>
-              <span class="blockitems ville" >, Ville,Quartier</span>
-
-
-            </div>
+            <span class="blockitems desc" >{{demande.description}}</span>
             <br>
-            <span class="blockitems service" >Service</span>
-
-            <span class="blockitems desc" >descrption pour rajouter des autres informations qui peuvent etre utiles pour remplir ce  blok </span>
-
-          </div>
-
-          <div class="col-md-3" style="padding: 0;" >
-            <div class="buttoncotainer">
-              <a href="#" class="mybtn1 buttons">
-                <img src="../../assets/offres/check.png" ></a>
-              <a href="#" class="mybtn2 buttons">
-                <img src="../../assets/offres/x.png" ></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div class="listblock">
-
-
-        <div class="row">
-          <div class="col-md-9">
-            <img src="../../assets/offres/user.jpg" class="profileimage blockitems">
-            <div class="blockitems namedate" >
-              <span class="sousblockitems username" >User Name</span>
-              <br>
-              <span class="sousblockitems date" >27 Mai 2020</span>
-              <span class="blockitems ville" >, Ville,Quartier</span>
-
-
-            </div>
+            <span style="color: blue;font-weight: bold;font-size: 13px" >Accepteur : </span>
             <br>
-            <span class="blockitems service" >Service</span>
-
-            <span class="blockitems desc" >descrption pour rajouter des autres informations qui peuvent etre utiles pour remplir ce  blok </span>
-
+            <span class="blockitems participants" *ngIf="!demande.accepted" >
+              en coure en attente
+            </span>
+            <span class="blockitems participants" *ngIf="demande.accepted" >
+              {{demande.participant.nom}}  {{demande.participant.prenom}}
+              <br>
+              {{demande.participant.tel}}
+              <br>
+              {{demande.participant.email}}
+            </span>
           </div>
-
           <div class="col-md-3" style="padding: 0;" >
             <div class="buttoncotainer">
-              <a href="#" class="mybtn1 buttons">
-                <img src="../../assets/offres/check.png" ></a>
-              <a href="#" class="mybtn2 buttons">
-                <img src="../../assets/offres/x.png" ></a>
+              <a  class="mybtn1 buttons" *ngIf="!demande.accepted">
+                <img src="../../assets/offres/check.png" (click)="openDialog(demande)">
+              </a>
+              <a  class="mybtn2 buttons">
+                <img src="../../assets/offres/x.png"  (click)="deleteUsreDemande(demande.id)" >
+              </a>
             </div>
           </div>
-
+        </div>
+        <div class="row justify-content-end" >
+          <input type="checkbox" (click)="demandedone(demande)" [checked]="demande.etat == 'done' && demande.accepted" name="etat" style="width:20px; height: 20px" >
         </div>
       </div>
-
-
-
-
-
     </div>
 
   </div>
