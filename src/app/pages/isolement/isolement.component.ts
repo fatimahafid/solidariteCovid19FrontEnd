@@ -97,6 +97,7 @@ export class IsolementComponent implements OnInit {
       response => {
         this.listStatutsT2 = response;
       });
+      console.log(this.listStatutsT2.length);
   }
 
   getuser() {

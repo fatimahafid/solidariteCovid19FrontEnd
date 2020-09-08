@@ -3,8 +3,31 @@
   border-radius: 10px;
   color:white;
 }
+body{
+  overflow: scroll;
+  margin-top:100px;
+}
 .form{
   backgorund:linear-gradient(#5f4dee,#400799);
-
+  overflow: scroll;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #5f4dee;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5f4dee;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5f4dee;
+}

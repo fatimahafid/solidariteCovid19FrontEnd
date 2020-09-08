@@ -132,8 +132,8 @@ h6{
   border-radius: 5%;
   padding: 15px;
   margin: 5px;
-  width: 220px;
-  height: 250px;
+  width: 200px;
+  height: Auto;
 
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
@@ -228,7 +228,7 @@ span.service{
   margin-bottom: 15px;
   align-items: center;
 }
-.poster img{
+.poster img {
   float: left;
   width: 45px;
   height: 45px;
@@ -238,6 +238,14 @@ span.service{
 
 
 
+}
+
+.plususer{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: -40px;
+  margin-top: -45px;
 }
 
 .participant img{

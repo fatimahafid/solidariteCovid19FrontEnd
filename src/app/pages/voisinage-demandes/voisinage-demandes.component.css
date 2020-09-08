@@ -326,3 +326,6 @@ h2{
   margin-top: 10%;
 }
 
+.divcard{
+  display: inline-block;
+}

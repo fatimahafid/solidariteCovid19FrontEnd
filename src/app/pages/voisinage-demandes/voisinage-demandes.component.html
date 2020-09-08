@@ -65,8 +65,8 @@
     <div class="insidleftbar">
 
       <div class="blocks" >
-        <img src="../../assets/offres/user.jpg" id="profileimage">
-        <h6>Maria borney</h6>
+        <img src="../../../assets/user/{{this.me.image}}" id="profileimage">
+        <h6>{{this.me.prenom}} {{this.me.nom}}</h6>
         <div class="row" class="littearea">
           <img src="../../assets/offres/fb.png" class="socialmedia" >
           <img src="../../assets/offres/insta.png" class="socialmedia">
@@ -77,232 +77,91 @@
       <div class="blocks" >
         <img src="../../assets/offres/plus.png" class="socialmedia">
 
-        20 offres
+        {{this.demandes.length}} Demandes
         <br>
-        <img src="../../assets/offres/plus.png" class="socialmedia">
 
-        50 Répones
-      </div>
     </div>
   </div>
 
-
+  </div>
 
 
   <div class="col-md-7" id="center">
 
 
-    <div class="col-md-4   offercard" >
+    <div *ngFor="let d of demandes " class="divcard ">
 
-      <div class="poster offerelement" >
-        <img src="../../../assets/offres/poster1.jpg">
-        <span class="postername ">Poster Name</span>
-      </div>
-      <div class="offerelement" ><span class="ville ">Marrakech,Mhamid</span></div>
-
-      <div class="offerelement" ><span class="service ">Offre de courses</span></div>
-      <div class="offerelement heure"  ><span class="service ">Heure d'offre 15h</span></div>
-      <div class="poster offerelement participant">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/user1.jpg">
-        <img src="../../../assets/offres/user2.jpg">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/plususer.png">
-
-      </div>
-      <div class="offerelement" ><a href="#" class="myButton">Participer</a>
-      </div>
-
-
-    </div>
-
-    <div class="col-md-4   offercard" >
-
-      <div class="poster offerelement" >
-        <img src="../../../assets/offres/poster2.jpg">
-        <span class="postername ">Poster Name</span>
-      </div>
-      <div class="offerelement" ><span class="ville ">Marrakech,Mhamid</span></div>
-
-      <div class="offerelement" ><span class="service ">Offre de courses</span></div>
-      <div class="offerelement heure"  ><span class="service ">Heure d'offre 15h</span></div>
-      <div class="poster offerelement participant">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/user1.jpg">
-        <img src="../../../assets/offres/user2.jpg">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/plususer.png">
-
-      </div>
-      <div class="offerelement" ><a href="#" class="myButton">Participer</a>
-      </div>
-
-
-    </div>
-
-    <div class="col-md-4   offercard" >
-
-      <div class="poster offerelement" >
-        <img src="../../../assets/offres/poster3.jpg">
-        <span class="postername ">Poster Name</span>
-      </div>
-      <div class="offerelement" ><span class="ville ">Marrakech,Mhamid</span></div>
-
-      <div class="offerelement" ><span class="service ">Offre de courses</span></div>
-      <div class="offerelement heure"  ><span class="service ">Heure d'offre 15h</span></div>
-      <div class="poster offerelement participant">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/user1.jpg">
-        <img src="../../../assets/offres/user2.jpg">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/plususer.png">
-
-      </div>
-      <div class="offerelement" ><a href="#" class="myButton">Participer</a>
-      </div>
-
-
-    </div>
-
-    <div class="col-md-4   offercard" >
-
-      <div class="poster offerelement" >
-        <img src="../../../assets/offres/poster4.jpg">
-        <span class="postername ">Poster Name</span>
-      </div>
-      <div class="offerelement" ><span class="ville ">Marrakech,Mhamid</span></div>
-
-      <div class="offerelement" ><span class="service ">Offre de courses</span></div>
-      <div class="offerelement heure"  ><span class="service ">Heure d'offre 15h</span></div>
-      <div class="poster offerelement participant">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/user1.jpg">
-        <img src="../../../assets/offres/user2.jpg">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/plususer.png">
-
-      </div>
-      <div class="offerelement" ><a href="#" class="myButton">Participer</a>
-      </div>
-
-
-    </div>
-
-    <div class="col-md-4   offercard" >
-
-      <div class="poster offerelement" >
-        <img src="../../../assets/offres/poster5.jpg">
-        <span class="postername ">Poster Name</span>
-      </div>
-      <div class="offerelement" ><span class="ville ">Marrakech,Mhamid</span></div>
-
-      <div class="offerelement" ><span class="service ">Offre de courses</span></div>
-      <div class="offerelement heure"  ><span class="service ">Heure d'offre 15h</span></div>
-      <div class="poster offerelement participant">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/user1.jpg">
-        <img src="../../../assets/offres/user2.jpg">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/plususer.png">
-
-      </div>
-      <div class="offerelement" ><a href="#" class="myButton">Participer</a>
-      </div>
-
-
-    </div>
-
-    <div class="col-md-4   offercard" >
-
-      <div class="poster offerelement" >
-        <img src="../../../assets/offres/poster6.jpg">
-        <span class="postername ">Poster Name</span>
-      </div>
-      <div class="offerelement" ><span class="ville ">Marrakech,Mhamid</span></div>
-
-      <div class="offerelement" ><span class="service ">Offre de courses</span></div>
-      <div class="offerelement heure"  ><span class="service ">Heure d'offre 15h</span></div>
-      <div class="poster offerelement participant">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/user1.jpg">
-        <img src="../../../assets/offres/user2.jpg">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/plususer.png">
-
-      </div>
-      <div class="offerelement" ><a href="#" class="myButton">Participer</a>
-      </div>
-
-
-    </div>
+      <div   ng-hide='!d.participant.id == null' class="offercard   item" *ngIf="d.participant==null">
 
 
 
-    <div class="col-md-4   offercard" >
 
-      <div class="poster offerelement" >
-        <img src="../../../assets/offres/user.jpg">
-        <span class="postername ">Poster Name</span>
-      </div>
-      <div class="offerelement" ><span class="ville ">Marrakech,Mhamid</span></div>
+        <div class="poster offerelement" >
+          <img src="../../assets/offres/{{d.user.image}} " >
+          <span class="postername ">{{d.user.prenom }} {{d.user.nom }}</span>
+        </div>
+        <div class="offerelement" ><span class="ville ">{{d.ville.nom}},{{d.quartier.nom}}</span></div>
 
-      <div class="offerelement" ><span class="service ">Offre de courses</span></div>
-      <div class="offerelement heure"  ><span class="service ">Heure d'offre 15h</span></div>
-      <div class="poster offerelement participant">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/user1.jpg">
-        <img src="../../../assets/offres/user2.jpg">
-        <img src="../../../assets/offres/user4.jpg">
-        <img src="../../../assets/offres/plususer.png">
+        <div class="offerelement" ><span class="service ">{{d.typeService.libelle}}</span></div>
+        <div class="offerelement heure"  ><span class="service "> Date offre : {{d.dateDemande | date: 'dd/MM/yyyy'}}   </span></div>
+        <div class="offerelement" ><h4 >{{d.description}}</h4></div>
 
-      </div>
-      <div class="offerelement" ><a href="#" class="myButton">Participer</a>
-      </div>
+        <div class="offerelement" ><a  style="color: #4f3cda" class="myButton"  (click)="this.participer(d)">Répondre </a>
+        </div>
 
 
-    </div>
+        </div>
+
+
+
+
+
+
+      </div   >
+
+
+
 
   </div>
+
   <div class="col-md-3" id="rightsidebar">
 
     <div class="blocks "  >
       <h2 > Personnaliser votre recherche </h2>
     </div>
-    <div class="blocks" >
 
+    <div class="blocks" >
 
       <div class="dropdown">
         <button class="dropbtn"><span class="icon"></span>Ville</button>
         <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <a  *ngFor="let v of villes"  (click)="this.getdemandeByville(v.id)" style="cursor: pointer">{{v.nom}}</a>
+
         </div>
       </div>
 
-
     </div>
     <div class="blocks" >
-
       <div class="dropdown">
         <button class="dropbtn"><span class="icon"></span>Quartier</button>
         <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <a  *ngFor="let q of quartiers  " style="cursor: pointer" (click)="this.getdemandeByquartier(q.nom)"> {{q.nom}}</a>
+
         </div>
       </div>
 
     </div>
+
     <div class="blocks" >
+
       <div class="dropdown">
         <button class="dropbtn"><span class="icon"></span>Service</button>
         <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <a  *ngFor="let ts of typeServices " (click)="this.getdemandeBytypeservice(ts.libelle)" style="cursor: pointer">{{ts.libelle}}</a>
+
         </div>
       </div>
+
 
     </div>
 

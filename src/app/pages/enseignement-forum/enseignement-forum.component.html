@@ -38,8 +38,8 @@
     <div    class="offercard" >
 
       <div class="poster offerelement" >
-        <img src="../../../assets/offres/poster3.jpg">
-        <span class="postername ">Poster Name</span>
+        <img src="../../../assets/offres/{{this.me.image}}">
+        <span class="postername ">{{this.me.prenom}} {{this.me.nom}}</span>
       </div>
 
       <form>
@@ -65,8 +65,8 @@
     <div    class="offercard" *ngFor="let sf of statutForumService.statutForums" name="statut" >
 
       <div class="poster offerelement" >
-        <img src="../../../assets/offres/poster3.jpg">
-        <span class="postername ">Poster Name</span>
+        <img src="../../../assets/offres/{{sf.user.image}}">
+        <span class="postername ">{{sf.user.prenom}} {{sf.user.nom}}</span>
       </div>
       <div class="offerelement ">
       <span>{{sf.question}}</span>
@@ -86,7 +86,7 @@
 
               <div class="commentarea" id="{{sf.id}}">
                 <div class="comment">
-                  <img class="commentimg" src="../../../assets/offres/poster4.jpg" style="margin-top: -12px;" >
+                  <img class="commentimg" src="../../../assets/offres/{{sf.user.image}}" style="margin-top: -12px;" >
 
                   <span *ngFor="let cf of statutForum.commentaireForums" >{{cf.libelle}}</span>
 

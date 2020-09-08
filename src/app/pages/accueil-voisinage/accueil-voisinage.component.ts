@@ -11,6 +11,8 @@ export class AccueilVoisinageComponent implements OnInit {
   constructor() { }
   images = ['../../../assets/accueil-voisinage/help.jpg', '../../../assets/accueil-voisinage/help2.jpg', '../../../assets/accueil-voisinage/3.jpg'];
 
+
+
   ngOnInit(): void {
   }
 
