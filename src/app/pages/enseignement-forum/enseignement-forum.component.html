@@ -38,13 +38,13 @@
     <div    class="offercard" >
 
       <div class="poster offerelement" >
-        <img src="../../../assets/offres/{{this.me.image}}">
-        <span class="postername ">{{this.me.prenom}} {{this.me.nom}}</span>
+        <img src="../../../assets/offres/user.jpg">
+        <span class="postername ">merieme Borney</span>
       </div>
 
       <form>
         <div class="form-group">
-          <textarea class="form-control" [(ngModel)]="statutForum.question" name="statutForum " placeholder="Posez votre question ici ..." ></textarea>
+          <textarea class="form-control" [(ngModel)]="statutForum.question"  name="statutForum " placeholder="Posez votre question ici ..." ></textarea>
         </div>
 
       <hr>
@@ -57,7 +57,7 @@
 
       </div>
 
-      <div class="offerelement" ><button (click)="savesf()" name="save"  class="myButton">Publier</button>
+      <div class="offerelement" ><button   (click)="savesf()" name="save"  class="myButton">Publier</button>
       </div> </form>
 
 
@@ -65,8 +65,8 @@
     <div    class="offercard" *ngFor="let sf of statutForumService.statutForums" name="statut" >
 
       <div class="poster offerelement" >
-        <img src="../../../assets/offres/{{sf.user.image}}">
-        <span class="postername ">{{sf.user.prenom}} {{sf.user.nom}}</span>
+        <img src="../../../assets/offres/user.jpg">
+        <span class="postername ">Manal charaf</span>
       </div>
       <div class="offerelement ">
       <span>{{sf.question}}</span>
@@ -86,7 +86,7 @@
 
               <div class="commentarea" id="{{sf.id}}">
                 <div class="comment">
-                  <img class="commentimg" src="../../../assets/offres/{{sf.user.image}}" style="margin-top: -12px;" >
+                  <img class="commentimg" src="../../../assets/offres/user.jpg" style="margin-top: -12px;" >
 
                   <span *ngFor="let cf of statutForum.commentaireForums" >{{cf.libelle}}</span>
 
@@ -130,26 +130,41 @@
     <div class="blocks" >
 
 
+      <!--   <div class="dropdown">
+           <select #selectedCategorie id="selectCategorie" [(ngModel)]="cours.categorie" name="categorie" (change)="this.filterSubById($event)" class="custom-select my-1 mr-sm-2"  id="inlineFormCustomSelectPref" required >
+             <option selected>Catégorie</option>
+             <option *ngFor="let c of categorieService.categories" (click)="findByCategorie(c.id)" [ngValue]="c.id" >{{c.libelle}}</option>
+
+           </select>
+
+         </div>-->
       <div class="dropdown">
-        <select  id="selectCategorie" [(ngModel)]="statutForum.categorie" name="categorie" (change)="this.filterSubById($event)" class="custom-select my-1 mr-sm-2"  id="inlineFormCustomSelectPref" required >
-          <option selected>Catégorie</option>
-          <option *ngFor="let c of categorieService.categories" [ngValue]="c.id">{{c.libelle}}</option>
+        <button class="dropbtn"><span class="icon"></span>Catégorie</button>
+        <div class="dropdown-content" #selectedCategorie id="selectCategorie" [(ngModel)]="cours.categorie" name="cat" (change)="this.filterSubById($event)" ngDefaultControl>
+          <a  id="{{ca.id}}" *ngFor="let ca of categorieService.categories" name="{{ca.libelle}}"  (click)="findByCategorie(ca.id)">{{ca.libelle}}</a>
 
-        </select>
-
+        </div>
       </div>
-      <br><br>
+
+      <!-- <div class="dropdown">
+         <button class="dropbtn"><span class="icon"></span>Catégorie</button>
+         <div class="dropdown-content" id="selectSousCategorie"  [(ngModel)]="cours.sousCategorie" name="sousCategorie" >
+           <a  id="{{sc.id}}" *ngFor="let sc of sousCategories" >{{sc.libelle}}</a>
+
+         </div>
+       </div>
+
       <div class="dropdown">
-        <select id="selectSousCategorie"  [(ngModel)]="statutForum.sousCategorie"  class="custom-select my-1 mr-sm-2" required  name="sousCategorie" >
+       <select id="selectSousCategorie"  [(ngModel)]="cours.sousCategorie"  class="custom-select my-1 mr-sm-2" required  name="sousCategorie" >
           <option  selected>Sous Catégorie</option>
-          <option  *ngFor="let sc of sousCategories">{{sc.libelle}}</option>
+          <option  *ngFor="let sc of sousCategories" >{{sc.libelle}}</option>
 
         </select>
-      </div>
-      </div>
-
+      </div>-->
 
     </div>
+
+  </div>
 
 
   </div>

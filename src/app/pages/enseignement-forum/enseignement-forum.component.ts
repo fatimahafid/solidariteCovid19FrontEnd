@@ -12,6 +12,7 @@ import {CommentaireForum} from "../../controller/model/commentaireForum.model";
 import {CommentaireForumService} from "../../controller/service/commentaireForum.service";
 import {User} from '../../controller/model/user.model';
 import {UserService} from '../../controller/service/user.service';
+import {CoursService} from "../../controller/service/cours.service";
 
 @Component({
   selector: 'app-enseignement-forum',
@@ -20,7 +21,7 @@ import {UserService} from '../../controller/service/user.service';
 })
 export class EnseignementForumComponent implements OnInit {
 
-  constructor(private userService: UserService,public commentaireForumService:CommentaireForumService,public statutForumService:StatutForumService,public categorieService: CategorieService, public sousCategorieService: SousCategorieService) { }
+  constructor(private userService: UserService,public coursService: CoursService,public commentaireForumService:CommentaireForumService,public statutForumService:StatutForumService,public categorieService: CategorieService, public sousCategorieService: SousCategorieService) { }
   user: any={};
   private _categorie: Categorie;
   private _sousCategorie : SousCategorie;
@@ -91,7 +92,13 @@ export class EnseignementForumComponent implements OnInit {
   }
   private _selectedstatutforum:String ;
   private _selectedcommentaireforum:String ;
-
+  get cours(): Cours {
+    return this.coursService.cours;
+  }
+  public findByCategorie(id) {
+    console.log("ha cat" + id)
+    this.coursService.findByCategorie(id);
+  }
 
   get selectedstatutforum(): String {
     return this._selectedstatutforum;

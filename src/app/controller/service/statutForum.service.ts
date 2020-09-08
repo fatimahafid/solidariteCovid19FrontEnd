@@ -6,6 +6,8 @@ import {Question} from "../model/question.model";
 import {Reponse} from "../model/reponse.model";
 import {StatutForum} from "../model/statutForum.model";
 import {CommentaireForum} from "../model/commentaireForum.model";
+import {UserService} from "./user.service";
+import {User} from "../model/user.model";
 
 
 @Injectable({
@@ -17,6 +19,7 @@ export class StatutForumService {
   public _statutForums: Array <StatutForum>;
   public _sousCategories: Array <SousCategorie>=new Array<SousCategorie>();
   private _commentaireForum: CommentaireForum;
+  me: User;
 
 
 
@@ -24,13 +27,13 @@ export class StatutForumService {
   private _urlQuestion: 'http://localhost:8090/api/commentaireforum/';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private userService: UserService) { }
 
   private cloneStatutForum(statutForum: StatutForum) {
     const myClone = new StatutForum();
     myClone.id = statutForum.id;
     myClone.question = statutForum.question;
-    myClone.user = statutForum.user;
+    myClone.user.id = statutForum.user.id ;
     myClone.categorie = statutForum.categorie;
     return myClone;
   }
@@ -58,14 +61,19 @@ export class StatutForumService {
 
    }
 
-
+  getuser() {
+    this.userService.getUser(+localStorage.getItem('id')).subscribe(
+      response => {
+        this.me = response;
+      }
+    );
+  }
   public save(){
 
     this.http.post('http://localhost:8090/api/statutforum/', this.statutForum).subscribe(
       data => {
         if(data>0) {
           this.statutForums.push(this.cloneStatutForum(this.statutForum));
-
           this.statutForum = null;
           this.commentaireForum = null;
 

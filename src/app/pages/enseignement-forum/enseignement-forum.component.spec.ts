@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EnseignementForumComponent } from './enseignement-forum.component';
+import {Cours} from "../../controller/model/cours.model";
 
 describe('EnseignementForumComponent', () => {
   let component: EnseignementForumComponent;

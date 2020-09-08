@@ -28,6 +28,9 @@ export class EnseignementListMescoursComponent implements OnInit {
 
   private _categorie: Categorie;
   private _sousCategorie : SousCategorie;
+  private _fileName: String;
+  private _selectedFiles: FileList;
+  private _selectedcategorie:String ;
 
   ngOnInit(): void {
     this.findAll();
@@ -141,7 +144,42 @@ export class EnseignementListMescoursComponent implements OnInit {
   get selectedcours(): String {
     return this._selectedcours;
   }
+  get fileName(): String {
+    return this._fileName;
+  }
 
+  set fileName(value: String) {
+    this._fileName = value;
+  }
+  public detectFiles(event) {
+    let newVal: string;
+    newVal = event.target.value;
+    let toArray = newVal.split(":");
+    this.fileName=toArray[4];
+    console.log("hahia li dik toarray 4 "+toArray[4]);
+    this.selectedFiles = event.target.files;
+    this.fileName = "../../../assets/accueil-Enseignement/"+this.selectedFiles[0].name;
+    console.log('selectedFiles: ' + this.fileName );
+  }
+  get selectedFiles(): FileList {
+    return this._selectedFiles;
+  }
+  get selectedcategorie(): String {
+    return this._selectedcategorie;
+  }
+
+  set selectedcategorie(value: String) {
+    this._selectedcategorie = value;
+  }
+  save() {
+    this.coursService.save( this.selectedcategorie,this.fileName );
+    this.ngOnInit();
+    console.log(this.cours + "aaaaaaaaaaaaaaa");
+
+  }
+  set selectedFiles(value: FileList) {
+    this._selectedFiles = value;
+  }
   set selectedcours(value: String) {
     this._selectedcours = value;
   }

@@ -69,26 +69,22 @@
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Titre" required>
+                  <input type="text" class="form-control"  id="formGroupExampleInput" placeholder="Titre" required [(ngModel)]="cours.titre"  name="titre">
                 </div>
+                <br>
                 <div class="form-group">
-                  <textarea type="text" class="form-control" id="formGroupExampleInput2" placeholder="Description" required></textarea>
+                  <textarea type="text" class="form-control"  id="formGroupExampleInput2" placeholder="Description" required [(ngModel)]="cours.description" name="description"></textarea>
                 </div>
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" required>
+                <br>
+                <select #selectedCategorie id="selectCategoriee" [(ngModel)]="cours.categorie" name="categorie" placeholder="Catégorie" (change)="this.filterSubById($event)"  class="custom-select my-1 mr-sm-2"  id="inlineFormCustomSelectPref" required >
                   <option selected>Catégorie</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-                <select class="custom-select my-1 mr-sm-2" required>
-                  <option selected>Sous Catégorie</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option *ngFor="let c of categorieService.categories"  [ngValue]="c.id">{{c.libelle}}</option>
+
                 </select>
                 <br>
+                <br>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                  <input type="file" class="custom-file-input" (change)="this.detectFiles($event)" [(ngModel)]="cours.attachement" id="validatedCustomFile" required name="attachement">
                   <label class="custom-file-label" for="validatedCustomFile">Ajoutez votre vidéo</label>
                   <div class="invalid-feedback">Example invalid custom file feedback</div>
                 </div>
@@ -96,7 +92,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-              <button type="button" class="btn btn-primary">Publier</button>
+              <button type="button" (click)="save()"  class="btn btn-primary" data-dismiss="modal" name="save">Publier</button>
             </div>
           </div>
         </div>
@@ -186,30 +182,39 @@
     <div class="blocks" >
 
 
+      <!--   <div class="dropdown">
+           <select #selectedCategorie id="selectCategorie" [(ngModel)]="cours.categorie" name="categorie" (change)="this.filterSubById($event)" class="custom-select my-1 mr-sm-2"  id="inlineFormCustomSelectPref" required >
+             <option selected>Catégorie</option>
+             <option *ngFor="let c of categorieService.categories" (click)="findByCategorie(c.id)" [ngValue]="c.id" >{{c.libelle}}</option>
+
+           </select>
+
+         </div>-->
       <div class="dropdown">
         <button class="dropbtn"><span class="icon"></span>Catégorie</button>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+        <div class="dropdown-content" #selectedCategorie id="selectCategorie" [(ngModel)]="cours.categorie" name="cat" (change)="this.filterSubById($event)" ngDefaultControl>
+          <a  id="{{ca.id}}" *ngFor="let ca of categorieService.categories" name="{{ca.libelle}}"  (click)="findByCategorie(ca.id)">{{ca.libelle}}</a>
+
         </div>
       </div>
 
+      <!-- <div class="dropdown">
+         <button class="dropbtn"><span class="icon"></span>Catégorie</button>
+         <div class="dropdown-content" id="selectSousCategorie"  [(ngModel)]="cours.sousCategorie" name="sousCategorie" >
+           <a  id="{{sc.id}}" *ngFor="let sc of sousCategories" >{{sc.libelle}}</a>
 
-    </div>
-    <div class="blocks" >
+         </div>
+       </div>
 
       <div class="dropdown">
-        <button class="dropbtn"><span class="icon"></span>Sous Catégorie</button>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>
+       <select id="selectSousCategorie"  [(ngModel)]="cours.sousCategorie"  class="custom-select my-1 mr-sm-2" required  name="sousCategorie" >
+          <option  selected>Sous Catégorie</option>
+          <option  *ngFor="let sc of sousCategories" >{{sc.libelle}}</option>
+
+        </select>
+      </div>-->
 
     </div>
-
 
   </div>
 </div>
