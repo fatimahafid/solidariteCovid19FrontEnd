@@ -65,8 +65,8 @@
     <div class="insidleftbar">
 
       <div class="blocks" >
-        <img src="../../assets/offres/user.jpg" id="profileimage">
-        <h6>Maria borney</h6>
+        <img src="../../../assets/user/{{this.me.image}}" id="profileimage">
+        <h6>{{this.me.prenom}} {{this.me.nom}}</h6>
         <div class="row" class="littearea">
           <img src="../../assets/offres/fb.png" class="socialmedia" >
           <img src="../../assets/offres/insta.png" class="socialmedia">
@@ -97,7 +97,7 @@
 
 
         <div class="poster offerelement" >
-          <img src={{d.user.image}} >
+          <img src="../../assets/offres/{{d.user.image}} " >
           <span class="postername ">{{d.user.prenom }} {{d.user.nom }}</span>
         </div>
         <div class="offerelement" ><span class="ville ">{{d.ville.nom}},{{d.quartier.nom}}</span></div>

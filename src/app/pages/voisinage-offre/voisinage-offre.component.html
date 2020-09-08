@@ -77,8 +77,8 @@
 
 
       <div class="blocks" >
-        <img src="../../assets/offres/user.jpg" id="profileimage">
-        <h6>Maria borney</h6>
+        <img src="../../../assets/user/{{this.me.image}}" id="profileimage">
+        <h6>{{this.me.prenom}} {{this.me.nom}}</h6>
         <div class="row" class="littearea">
           <img src="../../assets/offres/fb.png" class="socialmedia" >
           <img src="../../assets/offres/insta.png" class="socialmedia">
@@ -105,7 +105,7 @@
 
 
       <div class="poster offerelement" >
-            <img src={{o.user.image}} >
+            <img src="../../assets/offres/{{o.user.image}} ">
         <span class="postername ">{{o.user.prenom }} {{o.user.nom }}</span>
       </div>
       <div class="offerelement" ><span class="ville ">{{o.ville.nom}},{{o.quartier.nom}}</span></div>
@@ -126,7 +126,7 @@
           <div id="collapse{{o.user.id}}" class="panel-collapse collapse">
             <div class="panel-body participant " *ngFor="let oa of this.participations" >
 
-              <img src={{oa.user.image}} >
+              <img src="../../assets/offres/{{oa.user.image}} " >
 
             </div>
           </div></div></div>

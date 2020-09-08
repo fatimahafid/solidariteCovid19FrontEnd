@@ -14,6 +14,7 @@ import {QuartierService} from "../../controller/service/quartier.service";
 import {VilleService} from "../../controller/service/ville.service";
 import {TypeServiceService} from "../../controller/service/typeService.service";
 import {OffreAccepteService} from "../../controller/service/offreAccepte.service";
+import {UserService} from '../../controller/service/user.service';
 
 @Component({
   selector: 'app-voisinage-offre',
@@ -21,11 +22,12 @@ import {OffreAccepteService} from "../../controller/service/offreAccepte.service
   styleUrls: ['./voisinage-offre.component.css']
 })
 export class VoisinageOffreComponent implements OnInit {
+  me: User;
   private _ville: Ville;
   private _quartier : Quartier;
 
  private _participations : Array<OffreAccepte>;
-  constructor(public dialog: MatDialog,private router: Router,private offreService : OffreService,private offreAccepteService : OffreAccepteService
+  constructor(private userService: UserService,public dialog: MatDialog,private router: Router,private offreService : OffreService,private offreAccepteService : OffreAccepteService
 ,private quartierService : QuartierService,private villeService : VilleService,private typeServiceService : TypeServiceService) {
   }
 
@@ -44,6 +46,8 @@ export class VoisinageOffreComponent implements OnInit {
   }
   @Output() NgForOnCreateDirective: EventEmitter<any> = new EventEmitter<any>();
   ngOnInit(): void {
+    this.getuser();
+
     this.NgForOnCreateDirective.emit('dummy');
     this.offreService.getAlloffres()
     this.getAllVilles();
@@ -53,6 +57,14 @@ export class VoisinageOffreComponent implements OnInit {
   public  getAlloffres() {
      this.offreService.getAlloffres();
 
+
+  }
+  getuser() {
+    this.userService.getUser(+localStorage.getItem('id')).subscribe(
+      response => {
+        this.me = response;
+      }
+    );
   }
   public get offres(): Array<Offre>{
     return this.offreService.offres;

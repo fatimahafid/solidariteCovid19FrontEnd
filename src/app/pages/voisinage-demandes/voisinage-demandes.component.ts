@@ -11,6 +11,8 @@ import {Demande} from "../../controller/model/demande.model";
 import {Quartier} from "../../controller/model/quartier.model";
 import {Ville} from "../../controller/model/ville.model";
 import {TypeService} from "../../controller/model/type-service.model";
+import {User} from '../../controller/model/user.model';
+import {UserService} from '../../controller/service/user.service';
 
 @Component({
   selector: 'app-voisinage-demandes',
@@ -18,8 +20,9 @@ import {TypeService} from "../../controller/model/type-service.model";
   styleUrls: ['./voisinage-demandes.component.css']
 })
 export class VoisinageDemandesComponent implements OnInit {
+  me: User;
 
-  constructor(public dialog: MatDialog,private demandeService : DemandeService,private quartierService : QuartierService,private villeService : VilleService,private typeServiceService : TypeServiceService) { }
+  constructor(private userService: UserService,public dialog: MatDialog,private demandeService : DemandeService,private quartierService : QuartierService,private villeService : VilleService,private typeServiceService : TypeServiceService) { }
   openDialog(): void {
     const dialogRef = this.dialog.open(AjouterDemandeComponent, {
       width: '400px',
@@ -37,10 +40,18 @@ export class VoisinageDemandesComponent implements OnInit {
     this.getAllVilles();
     this.getAllTypeServices();
     this.getAllTypeServices();
+    this.getuser();
+
 
   }
 
-
+  getuser() {
+    this.userService.getUser(+localStorage.getItem('id')).subscribe(
+      response => {
+        this.me = response;
+      }
+    );
+  }
 
   public  get quartiers() : Array<Quartier> {
     return this.quartierService.quartiers;

@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="blocks" >
-        <img [src]="user_profiteur.image" class="socialmedia">
+        <img src="../../assets/offres/plus.png" class="socialmedia">
         {{offresaccepter.length}} offres
         <br>
         <img src="../../assets/offres/plus.png" class="socialmedia">
@@ -29,7 +29,7 @@
       <div class="listblock" *ngFor="let offreaccepte of offresaccepter;let indexOfelement=index" >
         <div class="row"  >
           <div class="col-md-9">
-            <img [src]="offreaccepte.offre.user.image" class="profileimage blockitems">
+            <img src="../../assets/offres/{{offreaccepte.offre.user.image}} " class="profileimage blockitems">
             <div class="blockitems namedate" >
               <span class="sousblockitems username" >{{offreaccepte.offre.user.nom}} {{offreaccepte.offre.user.prenom}}</span>
               <br>

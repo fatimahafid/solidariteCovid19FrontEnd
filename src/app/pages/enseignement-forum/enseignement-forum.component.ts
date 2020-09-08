@@ -10,6 +10,8 @@ import {SousCategorieService} from "../../controller/service/sousCategorie.servi
 import {Reponse} from "../../controller/model/reponse.model";
 import {CommentaireForum} from "../../controller/model/commentaireForum.model";
 import {CommentaireForumService} from "../../controller/service/commentaireForum.service";
+import {User} from '../../controller/model/user.model';
+import {UserService} from '../../controller/service/user.service';
 
 @Component({
   selector: 'app-enseignement-forum',
@@ -18,16 +20,26 @@ import {CommentaireForumService} from "../../controller/service/commentaireForum
 })
 export class EnseignementForumComponent implements OnInit {
 
-  constructor(public commentaireForumService:CommentaireForumService,public statutForumService:StatutForumService,public categorieService: CategorieService, public sousCategorieService: SousCategorieService) { }
+  constructor(private userService: UserService,public commentaireForumService:CommentaireForumService,public statutForumService:StatutForumService,public categorieService: CategorieService, public sousCategorieService: SousCategorieService) { }
   user: any={};
   private _categorie: Categorie;
   private _sousCategorie : SousCategorie;
+  me: User;
 
   ngOnInit(): void {
+    this.getuser();
+
     this.findAllsf();
     this.getAllCategories();
   }
 
+  getuser() {
+    this.userService.getUser(+localStorage.getItem('id')).subscribe(
+      response => {
+        this.me = response;
+      }
+    );
+  }
   public  get sousCategories() : Array<SousCategorie> {
     return this.sousCategorieService.sousCategories;
 
